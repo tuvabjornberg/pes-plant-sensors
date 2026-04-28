@@ -32,7 +32,6 @@ void init_light_sensor(){
 }
 
 float calculate_lux() {
-
     float lux = 0.0f;
     if ((ch0_data + ch1_data) != 0) {
         float ratio = (float) ch1_data / (ch0_data + ch1_data);
@@ -72,10 +71,9 @@ void read_light_sensor() {
 
         lux = calculate_lux();
 
-        int whole = (int)lux;
+        int whole = (int) lux;
         int decimal = (int)((lux - whole) * 100); 
-        if (decimal < 0) decimal = -decimal;
-
+        
         printk("Lux: %d.%02d\n", whole, decimal);
     }
 }
