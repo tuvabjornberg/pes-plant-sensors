@@ -91,7 +91,6 @@ int main(void) {
 
     while (1) { 
         read_light_sensor();
-        k_sleep(K_MSEC(1000));
     }
 
     return 0;
