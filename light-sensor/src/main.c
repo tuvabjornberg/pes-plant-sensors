@@ -16,8 +16,9 @@
 
 #define ALS_STATUS       0x8C  
 
+#define ALS_CONTR_STANDBY 0x00
 #define ALS_CONTR_ACTIVE 0x01 
-#define ALS_MEAS_RATE_VAL 0x14
+#define ALS_MEAS_RATE_VAL 0x12
 
 
 static uint16_t ch0_data;
@@ -26,9 +27,9 @@ static uint16_t ch1_data;
 static const struct device *i2c_bus;
 
 void init_light_sensor(){
-    i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_CONTR, ALS_CONTR_ACTIVE);
-    k_sleep(K_MSEC(10));
+    i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_CONTR, ALS_CONTR_STANDBY);
     i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_MEAS_RATE, ALS_MEAS_RATE_VAL);
+    k_msleep(100);
 }
 
 float calculate_lux() {
@@ -53,6 +54,9 @@ float calculate_lux() {
 }
 
 void read_light_sensor() {
+    i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_CONTR, ALS_CONTR_ACTIVE);
+    k_msleep(500);
+
     uint8_t status;
     i2c_reg_read_byte(i2c_bus, LTR303_ADDR, ALS_STATUS, &status);
 
@@ -76,6 +80,8 @@ void read_light_sensor() {
         
         printk("Lux: %d.%02d\n", whole, decimal);
     }
+
+    i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_CONTR, ALS_CONTR_STANDBY);
 }
 
 
@@ -91,6 +97,7 @@ int main(void) {
 
     while (1) { 
         read_light_sensor();
+        k_msleep(1000);
     }
 
     return 0;
