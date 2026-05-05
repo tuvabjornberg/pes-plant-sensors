@@ -1,5 +1,0 @@
-west:
-  command: /Users/davidhellstrom/EmbeddedSystems/zephyrproject/.venv/bin/west build
-    -p -b rpi_pico2/rp2350a/m33 .
-  topdir: /Users/davidhellstrom/EmbeddedSystems/zephyrproject
-  version: 1.5.0

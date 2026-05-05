@@ -1,1 +1,0 @@
-"mcuboot":"/Users/davidhellstrom/EmbeddedSystems/zephyrproject/bootloader/mcuboot":"/Users/davidhellstrom/EmbeddedSystems/zephyrproject/bootloader/mcuboot/boot/zephyr/sysbuild"
