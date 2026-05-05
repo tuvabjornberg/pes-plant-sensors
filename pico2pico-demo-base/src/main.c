@@ -1,4 +1,3 @@
-
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
@@ -13,21 +12,19 @@ int main(void) {
         printk("WAITING\n");
         k_msleep(200);
     }
-    k_msleep(5000);
+    k_msleep(2000);
     printk("STARTED 2j\n");
 
-    for (size_t i = 0; i < 10; i++) {
+    for (size_t i = 0; i < 0x90; i++) {
         uint8_t out = 0;
         int sc = i2c_reg_read_byte(bus, ADDR, (uint8_t)i, &out);
-        printk("Read %d %d out:%d\n", i, sc, out);
-        k_msleep(500);
+        printk("Read %02x %d out:%d\n", i, sc, out);
+        k_msleep(200);
     }
-
-    for (size_t i = 0; i < 20; i++) {
-        int sc = i2c_reg_write_byte(bus, ADDR, (uint8_t)i, 100 + i);
-        printk("Wrote %d %d \n", i, sc);
-        k_msleep(500);
+    for (size_t i = 0; i < 0x90; i++) {
+        uint8_t out = 0;
+        int sc = i2c_reg_write_byte(bus, ADDR, (uint8_t)i, out);
+        printk("Read %02x %d out:%d\n", i, sc, out);
+        k_msleep(200);
     }
-
-    return 0;
 }
