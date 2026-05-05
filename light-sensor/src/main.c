@@ -29,7 +29,6 @@ static const struct device *i2c_bus;
 void init_light_sensor(){
     i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_CONTR, ALS_CONTR_STANDBY);
     i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_MEAS_RATE, ALS_MEAS_RATE_VAL);
-    k_msleep(100);
 }
 
 float calculate_lux() {
@@ -97,7 +96,7 @@ int main(void) {
 
     while (1) { 
         read_light_sensor();
-        k_msleep(1000);
+        k_msleep(500);
     }
 
     return 0;
