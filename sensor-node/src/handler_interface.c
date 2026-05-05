@@ -19,7 +19,7 @@ static comm_state_machine_t comm = (comm_state_machine_t){
 static handler_config_t *registered_config = NULL;
 
 static int write_requested_cb(struct i2c_target_config *config) {
-    printk("write requested\n");
+    // printk("write requested\n");
     comm.state = COMM_WRITE_REQUESTED;
     return 0;
 }
