@@ -8,7 +8,6 @@
 #include <zephyr/usb/usb_device.h>
 
 #include "moisture_sensor.h"
-#include <ada4026_reg.h>
 
 // Black/Red: GND, 3V3
 // Green: SCL (Serial Clk)

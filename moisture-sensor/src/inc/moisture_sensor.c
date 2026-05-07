@@ -4,6 +4,7 @@
 #include <zephyr/drivers/i2c.h>
 
 #include "moisture_sensor.h"
+#include <ada4026_reg.h>
 
 #define ADA4026_ADDR 0x36
 #define I2C_LABEL    i2c0
