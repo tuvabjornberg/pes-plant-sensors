@@ -4,15 +4,13 @@
 #include <zephyr/drivers/i2c.h>
 
 #include "moisture_sensor.h"
-#include <ada4026_reg.h>
+// #include <ada4026_reg.h>
 
 #define ADA4026_ADDR 0x36
-#define I2C_LABEL    i2c0
 
-static const struct device *i2c_bus;
+static const struct device *i2c_bus_ref;
 
-int moisture_sensor_init(void) {
-    i2c_bus = DEVICE_DT_GET(DT_NODELABEL(I2C_LABEL));
+int moisture_sensor_init(const struct device *i2c_bus) {
 
     if (i2c_bus == NULL) {
         printf("No device found; did initialization fail?\n");
@@ -25,6 +23,8 @@ int moisture_sensor_init(void) {
         return -1;
     }
 
+    i2c_bus_ref = i2c_bus;
+
     printf("Everything is working.\n");
     fflush(stdout);
     return 0;
@@ -34,8 +34,8 @@ int moisture_sensor_read(uint16_t *moisture) {
     uint8_t cmd[2] = {0x0F, 0x10};
     uint8_t buf[2];
 
-    int data = i2c_write_read(i2c_bus, ADA4026_ADDR, cmd, sizeof(cmd), buf, sizeof(buf));
-
+    int data = i2c_write_read(i2c_bus_ref, ADA4026_ADDR, cmd, sizeof(cmd), buf, sizeof(buf));
+    
     if (data < 0) {
         return data;
     }

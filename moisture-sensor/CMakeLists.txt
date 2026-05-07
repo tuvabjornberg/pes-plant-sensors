@@ -36,6 +36,9 @@ project(hum-sensor)
 target_include_directories(app PRIVATE src/inc)
 
 # Add source files
-FILE(GLOB SRC_FILES "src/*.c")
+FILE(GLOB SRC_FILES
+    "src/*.c"
+    "src/inc/*.c"
+)
 target_sources(app PRIVATE ${SRC_FILES})
 

@@ -9,13 +9,18 @@
 
 #include "moisture_sensor.h"
 
+#define I2C_LABEL    i2c0
+
 // Black/Red: GND, 3V3
 // Green: SCL (Serial Clk)
 // White: SDA (Serial Data)
 
-int main(void)
-{
-    if (moisture_sensor_init() != 0) {
+static const struct device *i2c_bus;
+
+int main(void) {
+    i2c_bus = DEVICE_DT_GET(DT_NODELABEL(I2C_LABEL));
+
+    if (moisture_sensor_init(i2c_bus) != 0) {
         printf("Sensor init failed\n");
         return -1;
     }
@@ -23,12 +28,12 @@ int main(void)
     while (1) {
         uint16_t moisture;
 
-        int ret = moisture_sensor_read(&moisture);
+        int data = moisture_sensor_read(&moisture);
 
-        if (ret == 0) {
+        if (data == 0) {
             printf("Moisture: %u\n", moisture);
         } else {
-            printf("Read failed: %d\n", ret);
+            printf("Read failed: %d\n", data);
         }
 
         k_msleep(3000);

@@ -7,6 +7,10 @@
 &zephyr_udc0 {
 	cdc_acm_uart0: cdc_acm_uart0 {
 		compatible = "zephyr,cdc-acm-uart";
-		label = "Zephyr USB CDC-ACM";
 	};
+};
+
+
+&i2c0 {
+    status = "okay";
 };

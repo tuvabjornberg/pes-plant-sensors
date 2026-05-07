@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-int moisture_sensor_init(void);
+int moisture_sensor_init(const struct device *i2c_bus);
 int moisture_sensor_read(uint16_t *moisture);
 
 #endif
