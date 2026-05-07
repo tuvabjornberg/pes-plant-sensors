@@ -1,37 +1,33 @@
-#include "humidity-sensor.h"
+#include "humidity_sensor.h"
 
 #define BME680_ADDR BME68X_I2C_ADDR_HIGH
-
 
 static struct bme68x_dev bme;
 static uint8_t dev_addr = BME68X_I2C_ADDR_HIGH;
 const struct device *i2c_bus_shared;
 
-
-static BME68X_INTF_RET_TYPE bme68x_i2c_read(uint8_t reg_addr, uint8_t* reg_data,
-                                            uint32_t len, void* intf_ptr) {
-    uint8_t addr = *(uint8_t*)intf_ptr;
+static BME68X_INTF_RET_TYPE bme68x_i2c_read(uint8_t reg_addr, uint8_t *reg_data,
+                                            uint32_t len, void *intf_ptr) {
+    uint8_t addr = *(uint8_t *)intf_ptr;
     return i2c_write_read(i2c_bus_shared, addr, &reg_addr, 1, reg_data, len);
 }
 
 static BME68X_INTF_RET_TYPE bme68x_i2c_write(uint8_t reg_addr,
-                                             const uint8_t* reg_data,
-                                             uint32_t len, void* intf_ptr) {
-    uint8_t addr = *(uint8_t*)intf_ptr;
-  
+                                             const uint8_t *reg_data,
+                                             uint32_t len, void *intf_ptr) {
+    uint8_t addr = *(uint8_t *)intf_ptr;
+
     uint8_t buf[len + 1];
     buf[0] = reg_addr;
     memcpy(&buf[1], reg_data, len);
     return i2c_write(i2c_bus_shared, buf, len + 1, addr);
-}   
+}
 
-
-static void bme68x_delay_us(uint32_t period, void* intf_ptr) {
+static void bme68x_delay_us(uint32_t period, void *intf_ptr) {
     k_sleep(K_USEC(period));
 }
 
-
-void bme_config(const struct device *i2c_bus) {
+void init_humidity_sensor(const struct device *i2c_bus) {
     i2c_bus_shared = i2c_bus;
 
     bme.read = bme68x_i2c_read;
@@ -41,12 +37,12 @@ void bme_config(const struct device *i2c_bus) {
     bme.intf_ptr = &dev_addr;
 
     bme68x_init(&bme);
-  
+
     struct bme68x_conf conf;
     bme68x_get_conf(&conf, &bme);
-    conf.os_hum = BME68X_OS_2X;    
-    conf.os_temp = BME68X_OS_8X;   
-    conf.os_pres = BME68X_OS_NONE; 
+    conf.os_hum = BME68X_OS_2X;
+    conf.os_temp = BME68X_OS_8X;
+    conf.os_pres = BME68X_OS_NONE;
     conf.filter = BME68X_FILTER_OFF;
     bme68x_set_conf(&conf, &bme);
 
@@ -55,10 +51,9 @@ void bme_config(const struct device *i2c_bus) {
     bme68x_set_heatr_conf(BME68X_FORCED_MODE, &heatr_conf, &bme);
 }
 
-
-void read_humidity(const struct device *i2c_bus) {
+int read_humidity_sensor(int *h_whole, int *h_dec) {
     struct bme68x_conf conf;
-  
+
     bme68x_get_conf(&conf, &bme);
     bme68x_set_op_mode(BME68X_FORCED_MODE, &bme);
 
@@ -69,10 +64,8 @@ void read_humidity(const struct device *i2c_bus) {
     uint8_t n_fields;
     bme68x_get_data(BME68X_FORCED_MODE, &data, &n_fields, &bme);
 
-    if (n_fields) {
-        int h_whole = (int)data.humidity;
-        int h_dec = (int)((data.humidity - h_whole) * 100);
+    *h_whole = (int)data.humidity;
+    *h_dec = (int)((data.humidity - *h_whole) * 100);
 
-        printk("Humidity: %d.%02d %%\n", h_whole, h_dec);
-    }
+    return 0;
 }

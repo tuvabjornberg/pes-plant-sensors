@@ -10,7 +10,7 @@
 
 static const struct device *i2c_bus_ref;
 
-int moisture_sensor_init(const struct device *i2c_bus) {
+int init_moisture_sensor(const struct device *i2c_bus) {
 
     if (i2c_bus == NULL) {
         printf("No device found; did initialization fail?\n");
@@ -30,12 +30,12 @@ int moisture_sensor_init(const struct device *i2c_bus) {
     return 0;
 }
 
-int moisture_sensor_read(uint16_t *moisture) {
+int read_moisture_sensor(uint16_t *moisture) {
     uint8_t cmd[2] = {0x0F, 0x10};
     uint8_t buf[2];
 
     int data = i2c_write_read(i2c_bus_ref, ADA4026_ADDR, cmd, sizeof(cmd), buf, sizeof(buf));
-    
+
     if (data < 0) {
         return data;
     }

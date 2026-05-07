@@ -30,11 +30,14 @@ cmake_minimum_required(VERSION 3.20.0)
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(moisture-humidity LANGUAGES C)
 
-target_include_directories(app PRIVATE src/inc)
+target_include_directories(app PRIVATE src/inc src/inc/humidity-sensor src/inc/light-sensor src/inc/moisture-sensor)
 
 FILE(GLOB SRC_FILES
     "src/*.c"
     "src/inc/*.c"
+    "src/inc/humidity-sensor/*.c"
+    "src/inc/light-sensor/*.c"
+    "src/inc/moisture-sensor/*.c"
 )
 
 target_sources(app PRIVATE ${SRC_FILES})
