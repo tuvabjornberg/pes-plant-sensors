@@ -2,13 +2,20 @@
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/sys/printk.h>
 
+// Implementation of
+// https://mermaid.live/edit#pako:eNp1kktPwzAMgP9K5CPqRpd2feSAxOOKhMoBCYqmsLhdxZqUPMZg2n8nXbfBBORkO99nS4k3MFcCgUEpjeUWbxpea96OVrSUxJ-ns2cyGl3cW9V1KIbaPunr5EE3Fgt8c2gsCnaSD_Qp0TuXQugC5yuyxwfuWO2Rw4g9Qc7JgkuxxJnGevb-j1Sg6ZQUV67yXoFceM2gdR15cVWFmlhF7HoQf7Cn8_roT-RX9zut5miMt0pZSgig1o0AZrXDAFrULe9T2PTdSrALbLEE5kPB9WvpH3zrnY7LR6Xag6aVqxfAKr40PnOd-P6SI4JSoL5WTlpgaRbvegDbwBoYTabjhOZRMonzKMr7yw9gcTTO85AmeTwJwyxJtwF87maG4zSdZNM8itOMhjSjAaBorNK3w07sVmP7BcyqreI
 enum COMM_STATE { COMM_STOPPED,
                   COMM_WRITE_REQUESTED,
-                  COMM_ADDR_RECIVED };
+                  COMM_ADDR_RECIVED,
+                  COMM_BUF_SEND };
 
 typedef struct comm_state_machine {
     enum COMM_STATE state;
     uint8_t addr;
+    char send_buf[MAX_BUF_SIZE];
+    int cursor;     // must be < MAX_BUF_SIZE
+    size_t msg_len; // must be <= MAX_BUF_SIZE
+
 } comm_state_machine_t;
 
 static comm_state_machine_t comm = (comm_state_machine_t){
@@ -48,7 +55,10 @@ static int read_requested_cb(struct i2c_target_config *config, uint8_t *out) {
     // printk("read request: 0x%02x\n", *out);
 
     if (comm.state == COMM_ADDR_RECIVED) {
-        registered_config->handle_read(comm.addr, out);
+        registered_config->handle_read(comm.addr, comm.send_buf, &comm.msg_len);
+        *out = comm.send_buf[0];
+        comm.state = COMM_BUF_SEND;
+        comm.cursor = 1;
     } else {
         printk("Unexpected read: 0x%02x\n", *out);
     }
@@ -59,7 +69,12 @@ static int read_requested_cb(struct i2c_target_config *config, uint8_t *out) {
 static int read_processed_cb(struct i2c_target_config *config, uint8_t *val) {
     // TOOO:figure out what all this means
     // printk("read processed: 0x%02x\n", *val);
-    *val = 0x43;
+    if (comm.state == COMM_BUF_SEND && comm.cursor < comm.msg_len) {
+        *val = comm.send_buf[comm.cursor];
+        comm.cursor++;
+    } else {
+        *val = 0xff;
+    }
     return 0;
 }
 
