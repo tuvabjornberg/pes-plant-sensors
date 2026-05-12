@@ -6,7 +6,7 @@
 
 static const struct device *bus = DEVICE_DT_GET(DT_NODELABEL(i2c1));
 
-int handle_read(uint8_t reg, uint8_t *out) {
+int handle_read(uint8_t reg, uint8_t *to_send, size_t *bytes_to_send) {
     printk("[read] From 0x%02x ", reg);
     switch (reg) {
     case SENSOR_TEMPRATURE:
@@ -15,24 +15,18 @@ int handle_read(uint8_t reg, uint8_t *out) {
     case SENSOR_HUMIDITY:
         printk("Humidity\n");
         break;
-    case SENSOR_HUMIDITY_TEMPRATURE:
-        printk("Humidity Temprature\n");
-        break;
     case SENSOR_SOIL:
         printk("Soil\n");
         break;
     case SENSOR_LIGHT_TOTAL:
         printk("Light Total\n");
         break;
-    case SENSOR_LIGHT_IR:
-        printk("Light IR\n");
-        break;
 
     default:
         printk("unknown\n");
         break;
     }
-    *out = reg;
+    *to_send = reg;
     return 0;
 }
 

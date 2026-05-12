@@ -14,9 +14,7 @@
 
 #define SENSOR_TEMPRATURE            0x20
 #define SENSOR_HUMIDITY              0x30
-#define SENSOR_HUMIDITY_TEMPRATURE   0x31
 #define SENSOR_SOIL                  0x40
 #define SENSOR_LIGHT_TOTAL           0x50
-#define SENSOR_LIGHT_IR              0x51
 #define SENSOR_LIGHT_LEVEL_THRESHOLD 0x52
 #define SENSOR_LIGHT_TIME_THRESHOLD  0x53
