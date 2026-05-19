@@ -894,17 +894,25 @@ pico_serial0: &uart0 {};
  chosen {
   zephyr,console = &cdc_acm_uart0;
  };
-
- sensor_node0: sensor-node-0 {
-  compatible = "pes,sensor-node";
-  uart = <&uart0>;
-  status = "okay";
- };
 };
 
 &zephyr_udc0 {
  cdc_acm_uart0: cdc_acm_uart0 {
   compatible = "zephyr,cdc-acm-uart";
+ };
+};
+
+&i2c1_default {
+ group1 {
+  bias-pull-up;
+ };
+};
+
+&i2c1 {
+ sensor_node0: sensor-node-0@60 {
+  compatible = "pes,sensor-node";
+  reg = <0x60>;
+  status = "okay";
  };
 };
 # 0 "<command-line>" 2

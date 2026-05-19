@@ -1,11 +1,7 @@
-description: PES sensor node connected to base station via UART
+description: PES sensor node connected to base station via I2C
 
 compatible: "pes,sensor-node"
 
-include: base.yaml
+include: i2c-device.yaml
 
-properties:
-  uart:
-    type: phandle
-    required: true
-    description: UART device used to communicate with the sensor node
+properties: {}

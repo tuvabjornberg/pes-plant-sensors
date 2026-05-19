@@ -702,6 +702,7 @@
 				         < 0xe3 >;    /* in zephyr/boards/raspberrypi/common/rpi_pico-pinctrl-common.dtsi:29 */
 				input-enable;         /* in zephyr/boards/raspberrypi/common/rpi_pico-pinctrl-common.dtsi:30 */
 				input-schmitt-enable; /* in zephyr/boards/raspberrypi/common/rpi_pico-pinctrl-common.dtsi:31 */
+				bias-pull-up;         /* in zephyr/projects/pes-plant-sensors/sensor_node/app.overlay:15 */
 			};
 		};
 

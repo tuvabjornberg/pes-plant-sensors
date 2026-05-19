@@ -9,3 +9,9 @@
 		compatible = "zephyr,cdc-acm-uart";
 	};
 };
+
+&i2c1_default {
+	group1 {
+		bias-pull-up;
+	};
+};

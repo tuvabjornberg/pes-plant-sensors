@@ -89,6 +89,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/i2c/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/pinctrl/cmake_install.cmake")
 endif()
 

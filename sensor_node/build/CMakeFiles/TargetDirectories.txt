@@ -191,6 +191,11 @@
 /Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/hwinfo/CMakeFiles/drivers__hwinfo.dir
 /Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/hwinfo/CMakeFiles/edit_cache.dir
 /Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/hwinfo/CMakeFiles/rebuild_cache.dir
+/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/i2c/CMakeFiles/drivers__i2c.dir
+/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/i2c/CMakeFiles/edit_cache.dir
+/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/i2c/CMakeFiles/rebuild_cache.dir
+/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/i2c/target/CMakeFiles/edit_cache.dir
+/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/i2c/target/CMakeFiles/rebuild_cache.dir
 /Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/pinctrl/CMakeFiles/drivers__pinctrl.dir
 /Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/pinctrl/CMakeFiles/edit_cache.dir
 /Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/pinctrl/CMakeFiles/rebuild_cache.dir

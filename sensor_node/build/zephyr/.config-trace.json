@@ -461,6 +461,17 @@
     null
   ],
   [
+    "CONFIG_I2C_DW_CLOCK_SPEED",
+    "y",
+    "int",
+    "150",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/boards/raspberrypi/rpi_pico2/Kconfig.defconfig",
+      23
+    ]
+  ],
+  [
     "CONFIG_NUM_IRQS",
     "n",
     "int",
@@ -2655,6 +2666,17 @@
     ]
   ],
   [
+    "CONFIG_SOC_IT51XXX_CPU_IDLE_GATING",
+    "n",
+    "bool",
+    "y",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/i2c/Kconfig.it51xxx",
+      47
+    ]
+  ],
+  [
     "CONFIG_ARCH",
     "n",
     "string",
@@ -4471,9 +4493,186 @@
     "CONFIG_I2C",
     "y",
     "bool",
+    "y",
+    "assign",
+    [
+      "/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/prj.conf",
+      10
+    ]
+  ],
+  [
+    "CONFIG_I2C_SHELL_BUFFER_SIZE",
+    "y",
+    "int",
+    "16",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/i2c/Kconfig",
+      27
+    ]
+  ],
+  [
+    "CONFIG_I2C_CALLBACK",
+    "y",
+    "bool",
     null,
     "unset",
     null
+  ],
+  [
+    "CONFIG_I2C_BUS_RECOVERY",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_I2C_RTIO",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_I2C_TARGET",
+    "y",
+    "bool",
+    "y",
+    "assign",
+    [
+      "/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/prj.conf",
+      11
+    ]
+  ],
+  [
+    "CONFIG_I2C_TARGET_INIT_PRIORITY",
+    "y",
+    "int",
+    "60",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/i2c/target/Kconfig",
+      18
+    ]
+  ],
+  [
+    "CONFIG_I2C_TARGET_BUFFER_MODE",
+    "y",
+    "bool",
+    "y",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/i2c/Kconfig.it8xxx2",
+      78
+    ]
+  ],
+  [
+    "CONFIG_I2C_EEPROM_TARGET",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_I2C_DW",
+    "y",
+    "bool",
+    "y",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/i2c/Kconfig.dw",
+      6
+    ]
+  ],
+  [
+    "CONFIG_I2C_DW_LPSS_DMA",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_I2C_DW_RW_TIMEOUT_MS",
+    "y",
+    "int",
+    "100",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/i2c/Kconfig.dw",
+      31
+    ]
+  ],
+  [
+    "CONFIG_I2C_DW_EXTENDED_SUPPORT",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_I2C_DW_PM_POLICY_STATE_LOCK",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_I2C_TARGET_IT51XXX_MAX_BUF_SIZE",
+    "y",
+    "int",
+    "256",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/i2c/Kconfig.it51xxx",
+      39
+    ]
+  ],
+  [
+    "CONFIG_I2C_IT51XXX_MAX_SHARE_FIFO_SIZE",
+    "y",
+    "int",
+    "256",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/i2c/Kconfig.it51xxx",
+      44
+    ]
+  ],
+  [
+    "CONFIG_I2C_TARGET_IT8XXX2_MAX_BUF_SIZE",
+    "y",
+    "int",
+    "256",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/i2c/Kconfig.it8xxx2",
+      75
+    ]
+  ],
+  [
+    "CONFIG_I2C_TARGET_ALLOW_POWER_SAVING",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_I2C_INIT_PRIORITY",
+    "y",
+    "int",
+    "50",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/i2c/Kconfig",
+      187
+    ]
   ],
   [
     "CONFIG_I2S",
@@ -4607,6 +4806,7 @@
     [
       "CLOCK_CONTROL_RPI_PICO && DT_HAS_RASPBERRYPI_PICO_CLOCK_CONTROLLER_ENABLED && CLOCK_CONTROL",
       "GPIO_RPI_PICO && DT_HAS_RASPBERRYPI_PICO_GPIO_PORT_ENABLED && GPIO",
+      "I2C_DW && DT_HAS_SNPS_DESIGNWARE_I2C_ENABLED && I2C",
       "UART_PL011 && (DT_HAS_ARM_PL011_ENABLED || DT_HAS_ARM_SBSA_UART_ENABLED) && SERIAL",
       "USB_DC_RPI_PICO && DT_HAS_RASPBERRYPI_PICO_USBD_ENABLED && USB_DEVICE_DRIVER"
     ]
@@ -7735,6 +7935,16 @@
     [
       "/Users/alfred/zephyrproject/zephyr/Kconfig.zephyr",
       1111
+    ]
+  ],
+  [
+    "CONFIG_EXPERIMENTAL",
+    "n",
+    "bool",
+    "y",
+    "select",
+    [
+      "I2C_TARGET_BUFFER_MODE && I2C_TARGET && I2C"
     ]
   ],
   [

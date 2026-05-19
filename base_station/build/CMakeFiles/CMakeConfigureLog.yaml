@@ -251,6 +251,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -264,7 +265,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find_package-v1"
     backtrace:
@@ -363,6 +363,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -376,7 +377,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -400,6 +400,7 @@ events:
       - "ccache"
     candidate_directories:
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -413,14 +414,15 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/.venvs/zephyr/bin/ccache"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/ccache"
       - "/Users/alfred/.pyenv/shims/ccache"
     found: "/opt/homebrew/bin/ccache"
     search_context:
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -434,7 +436,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find_package-v1"
     backtrace:
@@ -530,6 +531,7 @@ events:
     search_context:
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -543,7 +545,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -571,6 +572,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -584,12 +586,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/gperf"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/gperf"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/gperf"
       - "/Users/alfred/.venvs/zephyr/bin/gperf"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/gperf"
       - "/Users/alfred/.pyenv/shims/gperf"
     found: "/opt/homebrew/bin/gperf"
     search_context:
@@ -597,6 +599,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -610,7 +613,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -638,6 +640,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -651,13 +654,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/openocd"
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -671,7 +674,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -699,6 +701,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -712,12 +715,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/bossac"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/bossac"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bossac"
       - "/Users/alfred/.venvs/zephyr/bin/bossac"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/bossac"
       - "/Users/alfred/.pyenv/shims/bossac"
       - "/opt/homebrew/bin/bossac"
       - "/opt/homebrew/sbin/bossac"
@@ -731,13 +734,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/bossac"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/bossac"
       - "/opt/pmk/env/global/bin/bossac"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/bossac"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -751,7 +754,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -781,6 +783,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/zephyrproject/bootloader/mcuboot/scripts/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -794,7 +797,6 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/imgtool.py"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/imgtool"
@@ -808,6 +810,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -821,7 +824,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -849,6 +851,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -862,12 +865,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/winpty"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/winpty"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/winpty"
       - "/Users/alfred/.venvs/zephyr/bin/winpty"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/winpty"
       - "/Users/alfred/.pyenv/shims/winpty"
       - "/opt/homebrew/bin/winpty"
       - "/opt/homebrew/sbin/winpty"
@@ -881,13 +884,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/winpty"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/winpty"
       - "/opt/pmk/env/global/bin/winpty"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/winpty"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -901,7 +904,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -933,6 +935,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -946,7 +949,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -978,6 +980,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -991,7 +994,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1019,6 +1021,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -1032,12 +1035,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/dtc"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/dtc"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/dtc"
       - "/Users/alfred/.venvs/zephyr/bin/dtc"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/dtc"
       - "/Users/alfred/.pyenv/shims/dtc"
     found: "/opt/homebrew/bin/dtc"
     search_context:
@@ -1045,6 +1048,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1058,7 +1062,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1090,6 +1093,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1103,7 +1107,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1135,6 +1138,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1148,7 +1152,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1180,6 +1183,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1193,7 +1197,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1225,6 +1228,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1238,7 +1242,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1270,6 +1273,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1283,7 +1287,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1315,6 +1318,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1328,7 +1332,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1360,6 +1363,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1373,7 +1377,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1405,6 +1408,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1418,7 +1422,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1450,6 +1453,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1463,7 +1467,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1495,6 +1498,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1508,7 +1512,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1540,6 +1543,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1553,7 +1557,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1581,6 +1584,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -1594,12 +1598,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/uname"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/uname"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/uname"
       - "/Users/alfred/.venvs/zephyr/bin/uname"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/uname"
       - "/Users/alfred/.pyenv/shims/uname"
       - "/opt/homebrew/bin/uname"
       - "/opt/homebrew/sbin/uname"
@@ -1611,6 +1615,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1624,7 +1629,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
@@ -1666,6 +1670,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -1679,7 +1684,6 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/ninja-build"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/ninja"
@@ -1693,6 +1697,9 @@ events:
       - "/Users/alfred/.venvs/zephyr/bin/ninja-build"
       - "/Users/alfred/.venvs/zephyr/bin/ninja"
       - "/Users/alfred/.venvs/zephyr/bin/samu"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/ninja-build"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/ninja"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/samu"
       - "/Users/alfred/.pyenv/shims/ninja-build"
       - "/Users/alfred/.pyenv/shims/ninja"
       - "/Users/alfred/.pyenv/shims/samu"
@@ -1703,6 +1710,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1716,7 +1724,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1752,6 +1759,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1765,7 +1773,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
@@ -1819,6 +1826,7 @@ events:
     candidate_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -1832,10 +1840,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-dlltool"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-dlltool"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-dlltool"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-dlltool"
       - "/opt/homebrew/bin/arm-zephyr-eabi-dlltool"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-dlltool"
@@ -1849,9 +1857,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-dlltool"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-dlltool"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-dlltool"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-dlltool"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/dlltool"
       - "/Users/alfred/.venvs/zephyr/bin/dlltool"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/dlltool"
       - "/Users/alfred/.pyenv/shims/dlltool"
       - "/opt/homebrew/bin/dlltool"
       - "/opt/homebrew/sbin/dlltool"
@@ -1865,13 +1873,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/dlltool"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/dlltool"
       - "/opt/pmk/env/global/bin/dlltool"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/dlltool"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1885,7 +1893,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1913,6 +1920,7 @@ events:
     candidate_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -1926,13 +1934,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     found: "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-addr2line"
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -1946,7 +1954,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -1974,6 +1981,7 @@ events:
     candidate_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -1987,10 +1995,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-tapi"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-tapi"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-tapi"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-tapi"
       - "/opt/homebrew/bin/arm-zephyr-eabi-tapi"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-tapi"
@@ -2004,9 +2012,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-tapi"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-tapi"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-tapi"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-tapi"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/tapi"
       - "/Users/alfred/.venvs/zephyr/bin/tapi"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/tapi"
       - "/Users/alfred/.pyenv/shims/tapi"
       - "/opt/homebrew/bin/tapi"
       - "/opt/homebrew/sbin/tapi"
@@ -2020,13 +2028,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/tapi"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/tapi"
       - "/opt/pmk/env/global/bin/tapi"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/tapi"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2040,7 +2048,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -2070,6 +2077,7 @@ events:
     candidate_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -2083,10 +2091,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar-14.3"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ar-14.3"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ar-14.3"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ar-14.3"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ar-14.3"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ar-14.3"
@@ -2100,9 +2108,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ar-14.3"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ar-14.3"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ar-14.3"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ar-14.3"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar-14"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ar-14"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ar-14"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ar-14"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ar-14"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ar-14"
@@ -2116,9 +2124,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ar-14"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ar-14"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ar-14"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ar-14"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar14"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ar14"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ar14"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ar14"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ar14"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ar14"
@@ -2132,13 +2140,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ar14"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ar14"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ar14"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ar14"
     found: "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar"
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2152,7 +2160,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -2182,6 +2189,7 @@ events:
     candidate_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -2195,10 +2203,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ranlib-14.3"
@@ -2212,9 +2220,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib-14"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ranlib-14"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ranlib-14"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ranlib-14"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ranlib-14"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ranlib-14"
@@ -2228,9 +2236,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ranlib-14"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ranlib-14"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ranlib-14"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ranlib-14"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib14"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ranlib14"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ranlib14"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ranlib14"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ranlib14"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ranlib14"
@@ -2244,13 +2252,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ranlib14"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ranlib14"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ranlib14"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ranlib14"
     found: "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib"
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2264,7 +2272,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -2300,6 +2307,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2313,7 +2321,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
@@ -2369,6 +2376,7 @@ events:
     candidate_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -2382,10 +2390,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar-14.3"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ar-14.3"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ar-14.3"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ar-14.3"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ar-14.3"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ar-14.3"
@@ -2399,9 +2407,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ar-14.3"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ar-14.3"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ar-14.3"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ar-14.3"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar-14"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ar-14"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ar-14"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ar-14"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ar-14"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ar-14"
@@ -2415,9 +2423,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ar-14"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ar-14"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ar-14"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ar-14"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar14"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ar14"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ar14"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ar14"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ar14"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ar14"
@@ -2431,13 +2439,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ar14"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ar14"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ar14"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ar14"
     found: "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar"
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2451,7 +2459,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -2481,6 +2488,7 @@ events:
     candidate_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -2494,10 +2502,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ranlib-14.3"
@@ -2511,9 +2519,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ranlib-14.3"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ranlib-14.3"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib-14"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ranlib-14"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ranlib-14"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ranlib-14"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ranlib-14"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ranlib-14"
@@ -2527,9 +2535,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ranlib-14"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ranlib-14"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ranlib-14"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ranlib-14"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib14"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ranlib14"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ranlib14"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ranlib14"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ranlib14"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ranlib14"
@@ -2543,13 +2551,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ranlib14"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ranlib14"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ranlib14"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ranlib14"
     found: "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib"
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2563,7 +2571,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
   -
     kind: "find-v1"
     backtrace:
@@ -2595,6 +2602,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2608,7 +2616,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PROGRAM_PATH:
         - "/bin"
@@ -2658,6 +2665,7 @@ events:
     candidate_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -2671,10 +2679,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar-"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ar-"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ar-"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ar-"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ar-"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ar-"
@@ -2688,9 +2696,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ar-"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ar-"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ar-"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ar-"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar-"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ar-"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ar-"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ar-"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ar-"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ar-"
@@ -2704,13 +2712,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ar-"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ar-"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ar-"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ar-"
     found: "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ar"
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2724,7 +2732,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PROGRAM_PATH:
         - "/bin"
@@ -2757,6 +2764,7 @@ events:
     candidate_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -2770,10 +2778,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib-"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ranlib-"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ranlib-"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ranlib-"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ranlib-"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ranlib-"
@@ -2787,9 +2795,9 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ranlib-"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ranlib-"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ranlib-"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ranlib-"
       - "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib-"
       - "/Users/alfred/.venvs/zephyr/bin/arm-zephyr-eabi-gcc-ranlib-"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/arm-zephyr-eabi-gcc-ranlib-"
       - "/Users/alfred/.pyenv/shims/arm-zephyr-eabi-gcc-ranlib-"
       - "/opt/homebrew/bin/arm-zephyr-eabi-gcc-ranlib-"
       - "/opt/homebrew/sbin/arm-zephyr-eabi-gcc-ranlib-"
@@ -2803,13 +2811,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/arm-zephyr-eabi-gcc-ranlib-"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/arm-zephyr-eabi-gcc-ranlib-"
       - "/opt/pmk/env/global/bin/arm-zephyr-eabi-gcc-ranlib-"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/arm-zephyr-eabi-gcc-ranlib-"
     found: "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc-ranlib"
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2823,10 +2831,41 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PROGRAM_PATH:
         - "/bin"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCCompilerFlag.cmake:105 (cmake_check_compiler_flag)"
+      - "/Users/alfred/zephyrproject/zephyr/cmake/modules/extensions.cmake:2421 (check_c_compiler_flag)"
+      - "/Users/alfred/zephyrproject/zephyr/cmake/modules/extensions.cmake:1199 (check_compiler_flag)"
+      - "/Users/alfred/zephyrproject/zephyr/cmake/modules/extensions.cmake:2460 (zephyr_check_compiler_flag)"
+      - "/Users/alfred/zephyrproject/zephyr/cmake/modules/extensions.cmake:2436 (target_cc_option_fallback)"
+      - "/Users/alfred/zephyrproject/zephyr/cmake/modules/extensions.cmake:156 (target_cc_option)"
+      - "/Users/alfred/zephyrproject/zephyr/CMakeLists.txt:634 (zephyr_cc_option)"
+    directories:
+      source: "/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/CMakeFiles/CMakeScratch/TryCompile-BSNZbh"
+      binary: "/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/CMakeFiles/CMakeScratch/TryCompile-BSNZbh"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/alfred/zephyrproject/zephyr/cmake/modules"
+    buildResult:
+      variable: "check_fmacro_prefix_map__Users_alfred_zephyrproject_zephyr_projects_pes_plant_sensors_base_station_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem___Users_alfred_zephyr_sdk_1_0_1_gnu_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_14_3_0_include___isystem___Users_alfred_zephyr_sdk_1_0_1_gnu_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_14_3_0_include___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/CMakeFiles/CMakeScratch/TryCompile-BSNZbh'
+        
+        Run Build Command(s): /opt/homebrew/bin/ninja -v cmTC_65d36
+        [1/2] /Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -Dcheck_fmacro_prefix_map__Users_alfred_zephyrproject_zephyr_projects_pes_plant_sensors_base_station_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem___Users_alfred_zephyr_sdk_1_0_1_gnu_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_14_3_0_include___isystem___Users_alfred_zephyr_sdk_1_0_1_gnu_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_14_3_0_include___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fuse_ld_bfd  -nostartfiles -nostdlib -isystem "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/14.3.0/include" -isystem "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/14.3.0/include" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd   -fmacro-prefix-map=/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station=CMAKE_SOURCE_DIR -o CMakeFiles/cmTC_65d36.dir/src.c.obj -c /Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/CMakeFiles/CMakeScratch/TryCompile-BSNZbh/src.c
+        [2/2] : && /Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc -nostartfiles -nostdlib -isystem "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/14.3.0/include" -isystem "/Users/alfred/zephyr-sdk-1.0.1/gnu/arm-zephyr-eabi/bin/../lib/gcc/arm-zephyr-eabi/14.3.0/include" -Wl,--unresolved-symbols=ignore-in-object-files -Wl,--entry=0 -fuse-ld=bfd  CMakeFiles/cmTC_65d36.dir/src.c.obj -o cmTC_65d36   && :
+        
+      exitCode: 0
   -
     kind: "find-v1"
     backtrace:
@@ -2849,6 +2888,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -2862,12 +2902,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/ccache"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/ccache"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/ccache"
       - "/Users/alfred/.venvs/zephyr/bin/ccache"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/ccache"
       - "/Users/alfred/.pyenv/shims/ccache"
     found: "/opt/homebrew/bin/ccache"
     search_context:
@@ -2875,6 +2915,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2888,7 +2929,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PROGRAM_PATH:
         - "/bin"
@@ -2916,6 +2956,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -2929,13 +2970,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
       - "/Users/alfred/zephyrproject/zephyr/scripts/build/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/gen_kobject_list"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/gen_kobject_list"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/gen_kobject_list"
       - "/Users/alfred/.venvs/zephyr/bin/gen_kobject_list"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/gen_kobject_list"
       - "/Users/alfred/.pyenv/shims/gen_kobject_list"
       - "/opt/homebrew/bin/gen_kobject_list"
       - "/opt/homebrew/sbin/gen_kobject_list"
@@ -2949,12 +2990,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/gen_kobject_list"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/gen_kobject_list"
       - "/opt/pmk/env/global/bin/gen_kobject_list"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/gen_kobject_list"
       - "/Users/alfred/zephyrproject/zephyr/scripts/build/gen_kobject_list"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/gen_kobject_list.py"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/gen_kobject_list.py"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/gen_kobject_list.py"
       - "/Users/alfred/.venvs/zephyr/bin/gen_kobject_list.py"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/gen_kobject_list.py"
       - "/Users/alfred/.pyenv/shims/gen_kobject_list.py"
       - "/opt/homebrew/bin/gen_kobject_list.py"
       - "/opt/homebrew/sbin/gen_kobject_list.py"
@@ -2968,13 +3009,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/gen_kobject_list.py"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/gen_kobject_list.py"
       - "/opt/pmk/env/global/bin/gen_kobject_list.py"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/gen_kobject_list.py"
     found: "/Users/alfred/zephyrproject/zephyr/scripts/build/gen_kobject_list.py"
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -2988,7 +3029,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PROGRAM_PATH:
         - "/bin"
@@ -3014,6 +3054,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -3027,12 +3068,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/puncover"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/puncover"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/puncover"
       - "/Users/alfred/.venvs/zephyr/bin/puncover"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/puncover"
       - "/Users/alfred/.pyenv/shims/puncover"
       - "/opt/homebrew/bin/puncover"
       - "/opt/homebrew/sbin/puncover"
@@ -3046,13 +3087,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/puncover"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/puncover"
       - "/opt/pmk/env/global/bin/puncover"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/puncover"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -3066,7 +3107,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PROGRAM_PATH:
         - "/bin"
@@ -3092,6 +3132,7 @@ events:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/"
       - "/Users/alfred/.venvs/zephyr/bin/"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/"
       - "/Users/alfred/.pyenv/shims/"
       - "/opt/homebrew/bin/"
       - "/opt/homebrew/sbin/"
@@ -3105,12 +3146,12 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
       - "/opt/pmk/env/global/bin/"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/bin/pahole"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/sbin/pahole"
       - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr/pahole"
       - "/Users/alfred/.venvs/zephyr/bin/pahole"
+      - "/Users/alfred/.pyenv/versions/3.12.7/bin/pahole"
       - "/Users/alfred/.pyenv/shims/pahole"
       - "/opt/homebrew/bin/pahole"
       - "/opt/homebrew/sbin/pahole"
@@ -3124,13 +3165,13 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/pahole"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/pahole"
       - "/opt/pmk/env/global/bin/pahole"
-      - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts/pahole"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -3144,7 +3185,6 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PROGRAM_PATH:
         - "/bin"
@@ -3280,6 +3320,7 @@ events:
         - "/Users/alfred/zephyr-sdk-1.0.1/hosttools/usr"
       ENV{PATH}:
         - "/Users/alfred/.venvs/zephyr/bin"
+        - "/Users/alfred/.pyenv/versions/3.12.7/bin"
         - "/Users/alfred/.pyenv/shims"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
@@ -3293,6 +3334,5 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
         - "/opt/pmk/env/global/bin"
-        - "/Users/alfred/.vscode/extensions/ms-python.debugpy-2026.6.0-darwin-arm64/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
 ...

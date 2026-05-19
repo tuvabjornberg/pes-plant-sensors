@@ -849,7 +849,7 @@ set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/i
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/i2c1_default/group1|raspberrypi,in-override" "0")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/i2c1_default/group1|raspberrypi,irq-override" "0")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/i2c1_default/group1|bias-disable" "False")
-set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/i2c1_default/group1|bias-pull-up" "False")
+set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/i2c1_default/group1|bias-pull-up" "True")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/i2c1_default/group1|bias-pull-down" "False")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/i2c1_default/group1|input-enable" "True")
 set_target_properties(${DEVICETREE_TARGET} PROPERTIES "DT_PROP|/pin-controller/i2c1_default/group1|input-schmitt-enable" "True")

@@ -362,7 +362,6 @@
 			status = "okay";                      /* in zephyr/boards/raspberrypi/rpi_pico2/rpi_pico2.dtsi:67 */
 			pinctrl-0 = < &uart0_default >;       /* in zephyr/boards/raspberrypi/rpi_pico2/rpi_pico2.dtsi:68 */
 			pinctrl-names = "default";            /* in zephyr/boards/raspberrypi/rpi_pico2/rpi_pico2.dtsi:69 */
-			phandle = < 0x20 >;                   /* in zephyr/projects/pes-plant-sensors/base_station/app.overlay:8 */
 		};
 
 		/* node '/soc/uart@40078000' defined in zephyr/dts/vendor/raspberrypi/rpi_pico/rp2350.dtsi:281 */
@@ -440,6 +439,13 @@
 			pinctrl-0 = < &i2c1_default >;       /* in zephyr/boards/raspberrypi/rpi_pico2/rpi_pico2.dtsi:91 */
 			pinctrl-names = "default";           /* in zephyr/boards/raspberrypi/rpi_pico2/rpi_pico2.dtsi:92 */
 			status = "okay";                     /* in zephyr/boards/raspberrypi/rpi_pico2/rpi_pico2.dtsi:93 */
+
+			/* node '/soc/i2c@40098000/sensor-node-0@60' defined in zephyr/projects/pes-plant-sensors/base_station/app.overlay:20 */
+			sensor_node0: sensor-node-0@60 {
+				compatible = "pes,sensor-node"; /* in zephyr/projects/pes-plant-sensors/base_station/app.overlay:21 */
+				reg = < 0x60 >;                 /* in zephyr/projects/pes-plant-sensors/base_station/app.overlay:22 */
+				status = "okay";                /* in zephyr/projects/pes-plant-sensors/base_station/app.overlay:23 */
+			};
 		};
 
 		/* node '/soc/adc@400a0000' defined in zephyr/dts/vendor/raspberrypi/rpi_pico/rp2350.dtsi:339 */
@@ -562,9 +568,9 @@
 			num-bidir-endpoints = < 0x10 >;       /* in zephyr/dts/vendor/raspberrypi/rpi_pico/rp2350.dtsi:437 */
 			status = "okay";                      /* in zephyr/boards/raspberrypi/rpi_pico2/rpi_pico2.dtsi:121 */
 
-			/* node '/soc/usbd@50110000/cdc_acm_uart0' defined in zephyr/projects/pes-plant-sensors/base_station/app.overlay:14 */
+			/* node '/soc/usbd@50110000/cdc_acm_uart0' defined in zephyr/projects/pes-plant-sensors/base_station/app.overlay:8 */
 			cdc_acm_uart0: cdc_acm_uart0 {
-				compatible = "zephyr,cdc-acm-uart"; /* in zephyr/projects/pes-plant-sensors/base_station/app.overlay:15 */
+				compatible = "zephyr,cdc-acm-uart"; /* in zephyr/projects/pes-plant-sensors/base_station/app.overlay:9 */
 			};
 		};
 
@@ -703,6 +709,7 @@
 				         < 0xe3 >;    /* in zephyr/boards/raspberrypi/common/rpi_pico-pinctrl-common.dtsi:29 */
 				input-enable;         /* in zephyr/boards/raspberrypi/common/rpi_pico-pinctrl-common.dtsi:30 */
 				input-schmitt-enable; /* in zephyr/boards/raspberrypi/common/rpi_pico-pinctrl-common.dtsi:31 */
+				bias-pull-up;         /* in zephyr/projects/pes-plant-sensors/base_station/app.overlay:15 */
 			};
 		};
 
@@ -811,12 +818,5 @@
 			pwms = < &pwm 0x9 0x1312d00 0x0 >; /* in zephyr/boards/raspberrypi/common/rpi_pico-led.dtsi:23 */
 			label = "PWM_LED";                 /* in zephyr/boards/raspberrypi/common/rpi_pico-led.dtsi:24 */
 		};
-	};
-
-	/* node '/sensor-node-0' defined in zephyr/projects/pes-plant-sensors/base_station/app.overlay:6 */
-	sensor_node0: sensor-node-0 {
-		compatible = "pes,sensor-node"; /* in zephyr/projects/pes-plant-sensors/base_station/app.overlay:7 */
-		uart = < &uart0 >;              /* in zephyr/projects/pes-plant-sensors/base_station/app.overlay:8 */
-		status = "okay";                /* in zephyr/projects/pes-plant-sensors/base_station/app.overlay:9 */
 	};
 };

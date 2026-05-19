@@ -901,5 +901,11 @@ pico_serial0: &uart0 {};
   compatible = "zephyr,cdc-acm-uart";
  };
 };
+
+&i2c1_default {
+ group1 {
+  bias-pull-up;
+ };
+};
 # 0 "<command-line>" 2
 # 1 "/Users/alfred/zephyrproject/zephyr/misc/empty_file.c"

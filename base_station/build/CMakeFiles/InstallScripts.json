@@ -72,6 +72,7 @@
 		"/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/zephyr/drivers/console/cmake_install.cmake",
 		"/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/zephyr/drivers/gpio/cmake_install.cmake",
 		"/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/zephyr/drivers/hwinfo/cmake_install.cmake",
+		"/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/zephyr/drivers/i2c/cmake_install.cmake",
 		"/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/zephyr/drivers/pinctrl/cmake_install.cmake",
 		"/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/zephyr/drivers/pinctrl/renesas/cmake_install.cmake",
 		"/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/base_station/build/zephyr/drivers/reset/cmake_install.cmake",
