@@ -15,3 +15,8 @@
 	pinctrl-0 = <&i2c1_default>;
     status = "okay";
 };
+
+&i2c0 {
+	pinctrl-0 = <&i2c0_default>;
+    status = "okay";
+};

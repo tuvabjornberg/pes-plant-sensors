@@ -15,11 +15,17 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # set(OPENOCD_DEFAULT_PATH "/usr/local/share/openocd/scripts")
 
 # Define project name
-project(pico2pico-prototype)
+project(sensor-node)
 
 # Add include directory 
-target_include_directories(app PRIVATE src/inc)
+target_include_directories(app PRIVATE src/inc src/inc/humidity-sensor src/inc/light-sensor src/inc/moisture-sensor)
 
-# Add source files
-FILE(GLOB SRC_FILES "src/*.c")
+FILE(GLOB SRC_FILES
+    "src/*.c"
+    "src/inc/*.c"
+    "src/inc/humidity-sensor/*.c"
+    "src/inc/light-sensor/*.c"
+    "src/inc/moisture-sensor/*.c"
+)
+
 target_sources(app PRIVATE ${SRC_FILES})

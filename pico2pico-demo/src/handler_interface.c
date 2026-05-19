@@ -25,7 +25,7 @@ static int write_requested_cb(struct i2c_target_config *config) {
 }
 
 static int write_received_cb(struct i2c_target_config *config, uint8_t val) {
-    // printk("write received: 0x%02x\n", val);
+    printk("write received: 0x%02x\n", val);
 
     switch (comm.state) {
     case COMM_WRITE_REQUESTED:
@@ -45,7 +45,7 @@ static int write_received_cb(struct i2c_target_config *config, uint8_t val) {
 }
 
 static int read_requested_cb(struct i2c_target_config *config, uint8_t *out) {
-    // printk("read request: 0x%02x\n", *out);
+    printk("read request: 0x%02x\n", *out);
 
     if (comm.state == COMM_ADDR_RECIVED) {
         registered_config->handle_read(comm.addr, out);
