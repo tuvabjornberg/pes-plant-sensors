@@ -1,0 +1,25 @@
+/ {
+	chosen {
+		zephyr,console = &cdc_acm_uart0;
+	};
+};
+
+&zephyr_udc0 {
+	cdc_acm_uart0: cdc_acm_uart0 {
+		compatible = "zephyr,cdc-acm-uart";
+	};
+};
+
+&i2c1_default {
+	group1 {
+		bias-pull-up;
+	};
+};
+
+&i2c1 {
+	sensor_node0: sensor-node-0@60 {
+		compatible = "pes,sensor-node";
+		reg = <0x60>;
+		status = "okay";
+	};
+};

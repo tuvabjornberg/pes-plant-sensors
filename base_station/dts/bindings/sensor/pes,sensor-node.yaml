@@ -1,0 +1,7 @@
+description: PES sensor node connected to base station via I2C
+
+compatible: "pes,sensor-node"
+
+include: i2c-device.yaml
+
+properties: {}
