@@ -9,7 +9,7 @@
 #include <zephyr/sys/printk.h>
 
 static const struct device *bus = DEVICE_DT_GET(DT_NODELABEL(i2c1));
-// static const struct device *sensor_i2c_bus = DEVICE_DT_GET(DT_NODELABEL(i2c0));
+static const struct device *sensor_i2c_bus = DEVICE_DT_GET(DT_NODELABEL(i2c0));
 
 int handle_read(uint8_t reg, uint8_t *to_send, size_t *bytes_to_send) {
     printk("[read] From 0x%02x ", reg);
@@ -80,9 +80,9 @@ int handle_write(uint8_t reg, uint8_t val) {
 
 int main(void) {
 
-    // init_humidity_sensor(sensor_i2c_bus);
-    // init_light_sensor(sensor_i2c_bus);
-    // init_moisture_sensor(sensor_i2c_bus);
+    init_humidity_sensor(sensor_i2c_bus);
+    init_light_sensor(sensor_i2c_bus);
+    init_moisture_sensor(sensor_i2c_bus);
 
     handler_config_t cfg = (handler_config_t){
         .handle_read = handle_read,
