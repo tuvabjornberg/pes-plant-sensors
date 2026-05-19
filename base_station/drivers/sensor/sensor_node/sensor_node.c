@@ -7,43 +7,16 @@ LOG_MODULE_REGISTER(sensor_node);
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/sensor.h>
-#include <zephyr/drivers/uart.h>
+#include <zephyr/drivers/i2c.h>
 #include <string.h>
 
-#include "sensor_node.h"
-
-#define REPLY_TIMEOUT_MS 500
-
 struct sensor_node_config {
-	const struct device *uart;
+	struct i2c_dt_spec i2c;
 };
 
 struct sensor_node_data {
 	int32_t temp_milli_c;
 };
-
-static uint8_t xor_checksum(const uint8_t *buf, size_t len)
-{
-	uint8_t cs = 0;
-
-	for (size_t i = 0; i < len; i++) {
-		cs ^= buf[i];
-	}
-	return cs;
-}
-
-static int uart_read_byte(const struct device *uart, uint8_t *out)
-{
-	int64_t deadline = k_uptime_get() + REPLY_TIMEOUT_MS;
-
-	while (uart_poll_in(uart, out) != 0) {
-		if (k_uptime_get() >= deadline) {
-			return -ETIMEDOUT;
-		}
-		k_sleep(K_USEC(200));
-	}
-	return 0;
-}
 
 static int sensor_node_sample_fetch(const struct device *dev,
 				    enum sensor_channel chan)
@@ -51,31 +24,17 @@ static int sensor_node_sample_fetch(const struct device *dev,
 	const struct sensor_node_config *cfg = dev->config;
 	struct sensor_node_data *data = dev->data;
 
-	uint8_t req[SN_REQUEST_LEN] = {SN_START_BYTE, SN_CMD_FETCH, 0};
+	uint8_t reg = 0x00;
+	uint8_t bytes[sizeof(int32_t)];
 
-	req[2] = xor_checksum(req, 2);
-	for (int i = 0; i < SN_REQUEST_LEN; i++) {
-		uart_poll_out(cfg->uart, req[i]);
+	int ret = i2c_write_read_dt(&cfg->i2c, &reg, 1, bytes, sizeof(bytes));
+
+	if (ret != 0) {
+		LOG_ERR("i2c read failed: %d", ret);
+		return ret;
 	}
 
-	uint8_t pkt[SN_REPLY_LEN];
-
-	for (int i = 0; i < SN_REPLY_LEN; i++) {
-		if (uart_read_byte(cfg->uart, &pkt[i]) != 0) {
-			LOG_ERR("timeout waiting for reply");
-			return -ETIMEDOUT;
-		}
-		if (i == 0 && pkt[0] != SN_START_BYTE) {
-			i = -1; /* resync */
-		}
-	}
-
-	if (xor_checksum(pkt, SN_REPLY_LEN - 1) != pkt[SN_REPLY_LEN - 1]) {
-		LOG_ERR("bad checksum");
-		return -EIO;
-	}
-
-	memcpy(&data->temp_milli_c, &pkt[3], sizeof(int32_t));
+	memcpy(&data->temp_milli_c, bytes, sizeof(int32_t));
 	return 0;
 }
 
@@ -103,24 +62,24 @@ static int sensor_node_init(const struct device *dev)
 {
 	const struct sensor_node_config *cfg = dev->config;
 
-	if (!device_is_ready(cfg->uart)) {
-		LOG_ERR("UART not ready");
+	if (!i2c_is_ready_dt(&cfg->i2c)) {
+		LOG_ERR("I2C not ready");
 		return -ENODEV;
 	}
 
 	return 0;
 }
 
-static struct sensor_node_data sensor_node_data;
-static const struct sensor_node_config sensor_node_config = {
-	.uart = DEVICE_DT_GET(DT_INST_PHANDLE(0, uart)),
+static struct sensor_node_data sensor_node_data_inst;
+static const struct sensor_node_config sensor_node_config_inst = {
+	.i2c = I2C_DT_SPEC_INST_GET(0),
 };
 
 SENSOR_DEVICE_DT_INST_DEFINE(0,
 	sensor_node_init,
 	NULL,
-	&sensor_node_data,
-	&sensor_node_config,
+	&sensor_node_data_inst,
+	&sensor_node_config_inst,
 	POST_KERNEL,
 	CONFIG_SENSOR_INIT_PRIORITY,
 	&sensor_node_api);
