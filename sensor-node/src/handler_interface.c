@@ -1,7 +1,7 @@
 #include "handler_interface.h"
+#include <stdalign.h>
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/sys/printk.h>
-
 // Implementation of
 // https://mermaid.live/edit#pako:eNp1kktPwzAMgP9K5CPqRpd2feSAxOOKhMoBCYqmsLhdxZqUPMZg2n8nXbfBBORkO99nS4k3MFcCgUEpjeUWbxpea96OVrSUxJ-ns2cyGl3cW9V1KIbaPunr5EE3Fgt8c2gsCnaSD_Qp0TuXQugC5yuyxwfuWO2Rw4g9Qc7JgkuxxJnGevb-j1Sg6ZQUV67yXoFceM2gdR15cVWFmlhF7HoQf7Cn8_roT-RX9zut5miMt0pZSgig1o0AZrXDAFrULe9T2PTdSrALbLEE5kPB9WvpH3zrnY7LR6Xag6aVqxfAKr40PnOd-P6SI4JSoL5WTlpgaRbvegDbwBoYTabjhOZRMonzKMr7yw9gcTTO85AmeTwJwyxJtwF87maG4zSdZNM8itOMhjSjAaBorNK3w07sVmP7BcyqreI
 enum COMM_STATE { COMM_STOPPED,
@@ -10,11 +10,11 @@ enum COMM_STATE { COMM_STOPPED,
                   COMM_BUF_SEND };
 
 typedef struct comm_state_machine {
-    enum COMM_STATE state;
-    uint8_t addr;
-    char send_buf[MAX_BUF_SIZE];
-    int cursor;     // must be < MAX_BUF_SIZE
+    alignas(float) char send_buf[MAX_BUF_SIZE];
     size_t msg_len; // must be <= MAX_BUF_SIZE
+    int cursor;     // must be < MAX_BUF_SIZE
+    uint8_t addr;
+    enum COMM_STATE state;
 
 } comm_state_machine_t;
 
