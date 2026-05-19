@@ -175,6 +175,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/c,cmake,visualstudiocode,ninja,windows,macos,linux
 
-flash.ps1
 buildnflash.ps1
-./vscode
+/.vscode
