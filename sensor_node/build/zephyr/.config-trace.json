@@ -335,6 +335,17 @@
     null
   ],
   [
+    "CONFIG_ADC_INIT_PRIORITY",
+    "y",
+    "int",
+    "50",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/adc/Kconfig",
+      72
+    ]
+  ],
+  [
     "CONFIG_MAIN_STACK_SIZE",
     "y",
     "int",
@@ -1804,6 +1815,16 @@
     "select",
     [
       "HWINFO_RPI_PICO && SOC_FAMILY_RPI_PICO && HWINFO"
+    ]
+  ],
+  [
+    "CONFIG_PICOSDK_USE_ADC",
+    "n",
+    "bool",
+    "y",
+    "select",
+    [
+      "ADC_RPI_PICO && DT_HAS_RASPBERRYPI_PICO_ADC_ENABLED && RESET && ADC"
     ]
   ],
   [
@@ -4060,9 +4081,47 @@
     "CONFIG_ADC",
     "y",
     "bool",
+    "y",
+    "assign",
+    [
+      "/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/prj.conf",
+      13
+    ]
+  ],
+  [
+    "CONFIG_ADC_ASYNC",
+    "y",
+    "bool",
     null,
     "unset",
     null
+  ],
+  [
+    "CONFIG_ADC_STREAM",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_ADC_DEFAULT_RTIO",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_ADC_RPI_PICO",
+    "y",
+    "bool",
+    "y",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/adc/Kconfig.rpi_pico",
+      6
+    ]
   ],
   [
     "CONFIG_AUDIO",
@@ -4804,6 +4863,7 @@
     "y",
     "select",
     [
+      "ADC_RPI_PICO && DT_HAS_RASPBERRYPI_PICO_ADC_ENABLED && RESET && ADC",
       "CLOCK_CONTROL_RPI_PICO && DT_HAS_RASPBERRYPI_PICO_CLOCK_CONTROLLER_ENABLED && CLOCK_CONTROL",
       "GPIO_RPI_PICO && DT_HAS_RASPBERRYPI_PICO_GPIO_PORT_ENABLED && GPIO",
       "I2C_DW && DT_HAS_SNPS_DESIGNWARE_I2C_ENABLED && I2C",
@@ -4936,9 +4996,61 @@
     "CONFIG_SENSOR",
     "y",
     "bool",
+    "y",
+    "assign",
+    [
+      "/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/prj.conf",
+      14
+    ]
+  ],
+  [
+    "CONFIG_SENSOR_INIT_PRIORITY",
+    "y",
+    "int",
+    "90",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/sensor/Kconfig",
+      20
+    ]
+  ],
+  [
+    "CONFIG_SENSOR_ASYNC_API",
+    "y",
+    "bool",
     null,
     "unset",
     null
+  ],
+  [
+    "CONFIG_SENSOR_INFO",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_ADE7978_SHUNT_RESISTOR",
+    "y",
+    "int",
+    "200",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/sensor/adi/ade7978/Kconfig",
+      15
+    ]
+  ],
+  [
+    "CONFIG_ADE7978_VOLTAGE_DIVIDER",
+    "y",
+    "int",
+    "1131",
+    "default",
+    [
+      "/Users/alfred/zephyrproject/zephyr/drivers/sensor/adi/ade7978/Kconfig",
+      21
+    ]
   ],
   [
     "CONFIG_SENT",

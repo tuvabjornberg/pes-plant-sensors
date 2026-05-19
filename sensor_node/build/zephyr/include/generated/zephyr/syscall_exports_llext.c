@@ -7,6 +7,10 @@
  */
 
 /* Symbol declarations */
+extern void * const z_impl_adc_channel_setup;
+extern void * const z_impl_adc_get_decoder;
+extern void * const z_impl_adc_read;
+extern void * const z_impl_adc_read_async;
 extern void * const z_impl_device_deinit;
 extern void * const z_impl_device_get_binding;
 extern void * const z_impl_device_get_by_dt_nodelabel;
@@ -142,6 +146,13 @@ extern void * const z_impl_reset_line_assert;
 extern void * const z_impl_reset_line_deassert;
 extern void * const z_impl_reset_line_toggle;
 extern void * const z_impl_reset_status;
+extern void * const z_impl_sensor_attr_get;
+extern void * const z_impl_sensor_attr_set;
+extern void * const z_impl_sensor_channel_get;
+extern void * const z_impl_sensor_get_decoder;
+extern void * const z_impl_sensor_reconfigure_read_iodev;
+extern void * const z_impl_sensor_sample_fetch;
+extern void * const z_impl_sensor_sample_fetch_chan;
 extern void * const z_impl_sys_clock_getrtoffset;
 extern void * const z_impl_sys_clock_hw_cycles_per_sec_runtime_get;
 extern void * const z_impl_sys_clock_nanosleep;
@@ -182,6 +193,10 @@ extern void * const z_impl_zephyr_read_stdin;
 extern void * const z_impl_zephyr_write_stdout;
 
 /* Exported symbols */
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_adc_channel_setup);
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_adc_get_decoder);
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_adc_read);
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_adc_read_async);
 EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_device_deinit);
 EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_device_get_binding);
 EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_device_get_by_dt_nodelabel);
@@ -317,6 +332,13 @@ EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_reset_line_assert);
 EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_reset_line_deassert);
 EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_reset_line_toggle);
 EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_reset_status);
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_sensor_attr_get);
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_sensor_attr_set);
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_sensor_channel_get);
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_sensor_get_decoder);
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_sensor_reconfigure_read_iodev);
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_sensor_sample_fetch);
+EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_sensor_sample_fetch_chan);
 EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_sys_clock_getrtoffset);
 EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_sys_clock_hw_cycles_per_sec_runtime_get);
 EXPORT_GROUP_SYMBOL(SYSCALL, z_impl_sys_clock_nanosleep);

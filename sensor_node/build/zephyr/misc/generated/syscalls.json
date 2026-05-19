@@ -145,6 +145,38 @@
     ],
     [
         [
+            "int adc_channel_setup",
+            "const struct device *dev, const struct adc_channel_cfg *channel_cfg"
+        ],
+        "adc.h",
+        true
+    ],
+    [
+        [
+            "int adc_read",
+            "const struct device *dev, const struct adc_sequence *sequence"
+        ],
+        "adc.h",
+        true
+    ],
+    [
+        [
+            "int adc_read_async",
+            "const struct device *dev, const struct adc_sequence *sequence, struct k_poll_signal *async"
+        ],
+        "adc.h",
+        true
+    ],
+    [
+        [
+            "int adc_get_decoder",
+            "const struct device *dev, const struct adc_decoder_api **api"
+        ],
+        "adc.h",
+        true
+    ],
+    [
+        [
             "int gpio_pin_interrupt_configure",
             "const struct device *port, gpio_pin_t pin, gpio_flags_t flags"
         ],
@@ -341,6 +373,62 @@
             "const struct device *dev, uint32_t id"
         ],
         "reset.h",
+        true
+    ],
+    [
+        [
+            "int sensor_attr_set",
+            "const struct device *dev, enum sensor_channel chan, enum sensor_attribute attr, const struct sensor_value *val"
+        ],
+        "sensor.h",
+        true
+    ],
+    [
+        [
+            "int sensor_attr_get",
+            "const struct device *dev, enum sensor_channel chan, enum sensor_attribute attr, struct sensor_value *val"
+        ],
+        "sensor.h",
+        true
+    ],
+    [
+        [
+            "int sensor_sample_fetch",
+            "const struct device *dev"
+        ],
+        "sensor.h",
+        true
+    ],
+    [
+        [
+            "int sensor_sample_fetch_chan",
+            "const struct device *dev, enum sensor_channel type"
+        ],
+        "sensor.h",
+        true
+    ],
+    [
+        [
+            "int sensor_channel_get",
+            "const struct device *dev, enum sensor_channel chan, struct sensor_value *val"
+        ],
+        "sensor.h",
+        true
+    ],
+    [
+        [
+            "int sensor_get_decoder",
+            "const struct device *dev, const struct sensor_decoder_api **decoder"
+        ],
+        "sensor.h",
+        true
+    ],
+    [
+        [
+            "int sensor_reconfigure_read_iodev",
+            "const struct rtio_iodev *iodev, const struct device *sensor, const struct sensor_chan_spec *channels, size_t num_channels"
+        ],
+        "sensor.h",
         true
     ],
     [
@@ -1421,38 +1509,6 @@
             "unsigned int reason"
         ],
         "arch.h",
-        false
-    ],
-    [
-        [
-            "int adc_channel_setup",
-            "const struct device *dev, const struct adc_channel_cfg *channel_cfg"
-        ],
-        "adc.h",
-        false
-    ],
-    [
-        [
-            "int adc_read",
-            "const struct device *dev, const struct adc_sequence *sequence"
-        ],
-        "adc.h",
-        false
-    ],
-    [
-        [
-            "int adc_read_async",
-            "const struct device *dev, const struct adc_sequence *sequence, struct k_poll_signal *async"
-        ],
-        "adc.h",
-        false
-    ],
-    [
-        [
-            "int adc_get_decoder",
-            "const struct device *dev, const struct adc_decoder_api **api"
-        ],
-        "adc.h",
         false
     ],
     [
@@ -3533,62 +3589,6 @@
             "const struct device *dev, int sources"
         ],
         "sdhc.h",
-        false
-    ],
-    [
-        [
-            "int sensor_attr_set",
-            "const struct device *dev, enum sensor_channel chan, enum sensor_attribute attr, const struct sensor_value *val"
-        ],
-        "sensor.h",
-        false
-    ],
-    [
-        [
-            "int sensor_attr_get",
-            "const struct device *dev, enum sensor_channel chan, enum sensor_attribute attr, struct sensor_value *val"
-        ],
-        "sensor.h",
-        false
-    ],
-    [
-        [
-            "int sensor_sample_fetch",
-            "const struct device *dev"
-        ],
-        "sensor.h",
-        false
-    ],
-    [
-        [
-            "int sensor_sample_fetch_chan",
-            "const struct device *dev, enum sensor_channel type"
-        ],
-        "sensor.h",
-        false
-    ],
-    [
-        [
-            "int sensor_channel_get",
-            "const struct device *dev, enum sensor_channel chan, struct sensor_value *val"
-        ],
-        "sensor.h",
-        false
-    ],
-    [
-        [
-            "int sensor_get_decoder",
-            "const struct device *dev, const struct sensor_decoder_api **decoder"
-        ],
-        "sensor.h",
-        false
-    ],
-    [
-        [
-            "int sensor_reconfigure_read_iodev",
-            "const struct rtio_iodev *iodev, const struct device *sensor, const struct sensor_chan_spec *channels, size_t num_channels"
-        ],
-        "sensor.h",
         false
     ],
     [

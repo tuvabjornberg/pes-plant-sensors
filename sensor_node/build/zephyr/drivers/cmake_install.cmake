@@ -69,6 +69,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/adc/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/clock_control/cmake_install.cmake")
 endif()
 
@@ -100,6 +105,11 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/reset/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/alfred/zephyrproject/zephyr/projects/pes-plant-sensors/sensor_node/build/zephyr/drivers/sensor/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

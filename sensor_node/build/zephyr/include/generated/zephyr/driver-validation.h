@@ -4,6 +4,8 @@
 		(K_SYSCALL_OBJ(ptr, K_OBJ_DRIVER_##driver_upper_case) || \
 		 K_SYSCALL_DRIVER_OP(ptr, driver_lower_case##_driver_api, op))
                 
+#define K_SYSCALL_DRIVER_ADC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, adc, ADC)
+
 #define K_SYSCALL_DRIVER_GPIO(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, gpio, GPIO)
 
 #define K_SYSCALL_DRIVER_I2C(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, i2c, I2C)
@@ -12,13 +14,13 @@
 
 #define K_SYSCALL_DRIVER_RESET(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, reset, RESET)
 
+#define K_SYSCALL_DRIVER_SENSOR(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, sensor, SENSOR)
+
 #define K_SYSCALL_DRIVER_SHARED_IRQ(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, shared_irq, SHARED_IRQ)
 
 #define K_SYSCALL_DRIVER_DMIC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, dmic, DMIC)
 
 #define K_SYSCALL_DRIVER_CRYPTO(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, crypto, CRYPTO)
-
-#define K_SYSCALL_DRIVER_ADC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, adc, ADC)
 
 #define K_SYSCALL_DRIVER_AUXDISPLAY(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, auxdisplay, AUXDISPLAY)
 
@@ -123,8 +125,6 @@
 #define K_SYSCALL_DRIVER_RTC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, rtc, RTC)
 
 #define K_SYSCALL_DRIVER_SDHC(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, sdhc, SDHC)
-
-#define K_SYSCALL_DRIVER_SENSOR(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, sensor, SENSOR)
 
 #define K_SYSCALL_DRIVER_SMBUS(ptr, op) K_SYSCALL_DRIVER_GEN(ptr, op, smbus, SMBUS)
 
