@@ -3,12 +3,14 @@
 #define LOG_LEVEL CONFIG_SENSOR_LOG_LEVEL
 #include <zephyr/logging/log.h>
 LOG_MODULE_REGISTER(sensor_node);
-
+#include <errno.h>
 #include <string.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/kernel.h>
+
+#define PLANT_MONITOR_CHAN_SOIL_MOISTURE SENSOR_CHAN_PRIV_START
 
 struct sensor_node_config {
     struct i2c_dt_spec i2c;
@@ -21,21 +23,60 @@ struct sensor_node_data {
     float lux;
 };
 
+static int get_register(enum sensor_channel chan, struct sensor_node_data *data, uint8_t *reg, size_t *size, void **target) {
+    switch (chan) {
+    case SENSOR_CHAN_AMBIENT_TEMP:
+        *reg = 0x20;
+        *size = sizeof(int32_t);
+        *target = &data->temp_milli_c;
+        return 0;
+
+    case SENSOR_CHAN_HUMIDITY:
+        *reg = 0x30;
+        *size = sizeof(float);
+        *target = &data->humidity;
+        return 0;
+
+    case PLANT_MONITOR_CHAN_SOIL_MOISTURE:
+        *reg = 0x40;
+        *size = sizeof(uint16_t);
+        *target = &data->soil_moisture;
+        return 0;
+
+    case SENSOR_CHAN_LIGHT:
+        *reg = 0x50;
+        *size = sizeof(float);
+        *target = &data->lux;
+        return 0;
+
+    default:
+        return -1;
+    }
+}
+
 static int sensor_node_sample_fetch(const struct device *dev,
                                     enum sensor_channel chan) {
     const struct sensor_node_config *cfg = dev->config;
 
     uint8_t reg = 0x00;
-    uint8_t bytes[sizeof(int32_t)];
+    uint8_t buffer[sizeof(float)];
 
-    int ret = i2c_write_read_dt(&cfg->i2c, &reg, 1, bytes, sizeof(bytes));
+    size_t reg_size = 0;
+    struct sensor_node_data *data = dev->data;
+    void *target = NULL;
+
+    if (get_register(chan, data, &reg, &reg_size, &target) != 0) {
+        return -EINVAL + 1;
+    }
+
+    int ret = i2c_write_read_dt(&cfg->i2c, &reg, 1, buffer, reg_size);
 
     if (ret != 0) {
         LOG_ERR("i2c read failed: %d", ret);
         return ret;
     }
 
-    memcpy(&data->temp_milli_c, bytes, sizeof(int32_t));
+    memcpy(target, buffer, reg_size);
     return 0;
 }
 
