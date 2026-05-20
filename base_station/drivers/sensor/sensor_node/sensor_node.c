@@ -48,25 +48,23 @@ static int get_register(enum sensor_channel chan, struct sensor_node_data *data,
         *size = sizeof(float);
         *target = &data->lux;
         return 0;
-
     default:
         return -1;
     }
 }
+static int fetch_single_channel(const struct device *dev,
+                                enum sensor_channel chan) {
 
-static int sensor_node_sample_fetch(const struct device *dev,
-                                    enum sensor_channel chan) {
     const struct sensor_node_config *cfg = dev->config;
+    struct sensor_node_data *data = dev->data;
 
     uint8_t reg = 0x00;
-    uint8_t buffer[sizeof(float)];
-
     size_t reg_size = 0;
-    struct sensor_node_data *data = dev->data;
+    uint8_t buffer[sizeof(float)];
     void *target = NULL;
 
     if (get_register(chan, data, &reg, &reg_size, &target) != 0) {
-        return -EINVAL + 1;
+        return -ENOTSUP;
     }
 
     int ret = i2c_write_read_dt(&cfg->i2c, &reg, 1, buffer, reg_size);
@@ -77,6 +75,31 @@ static int sensor_node_sample_fetch(const struct device *dev,
     }
 
     memcpy(target, buffer, reg_size);
+    return 0;
+}
+
+#define ALL_CHANNEL_COUNT 4
+static int sensor_node_sample_fetch(const struct device *dev,
+                                    enum sensor_channel chan) {
+
+    const enum sensor_channel ALL_CHANNELS[ALL_CHANNEL_COUNT] = {
+        SENSOR_CHAN_AMBIENT_TEMP,
+        SENSOR_CHAN_HUMIDITY,
+        PLANT_MONITOR_CHAN_SOIL_MOISTURE,
+        SENSOR_CHAN_LIGHT,
+    };
+
+    if (chan != SENSOR_CHAN_ALL) {
+        return fetch_single_channel(dev, chan);
+    }
+
+    for (size_t i = 0; i < ALL_CHANNEL_COUNT; i++) {
+        int ret = fetch_single_channel(dev, ALL_CHANNELS[i]);
+        if (ret < 0) {
+            return ret;
+        }
+    }
+
     return 0;
 }
 
