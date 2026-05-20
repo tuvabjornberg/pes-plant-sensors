@@ -3,6 +3,7 @@
 #include "light_sensor.h"
 #include "moisture_sensor.h"
 #include "sensor_registers.h"
+#include "temp_sensor.h"
 
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/kernel.h>
@@ -10,8 +11,9 @@
 
 static const struct device *bus = DEVICE_DT_GET(DT_NODELABEL(i2c1));
 static const struct device *sensor_i2c_bus = DEVICE_DT_GET(DT_NODELABEL(i2c0));
+static const struct adc_dt_spec adc_chan = ADC_DT_SPEC_GET(DT_PATH(zephyr_user));
 
-static uint16_t temperature = 0;
+static int32_t temperature = 0;
 static float humidity = 0;
 static uint16_t soil_moisture = 10;
 static float lux = 30;
@@ -66,7 +68,7 @@ int handle_write(uint8_t reg, uint8_t val) {
 }
 
 int main(void) {
-
+    init_temp_sensor(&adc_chan);
     init_humidity_sensor(sensor_i2c_bus);
     init_light_sensor(sensor_i2c_bus);
     init_moisture_sensor(sensor_i2c_bus);
@@ -87,6 +89,7 @@ int main(void) {
 
     while (1) {
         k_msleep(1000);
+        read_temp_sensor(&temperature);
         read_humidity_sensor(&humidity);
         read_light_sensor(&lux);
         read_moisture_sensor(&soil_moisture);

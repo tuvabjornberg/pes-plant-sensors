@@ -18,7 +18,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project(sensor-node)
 
 # Add include directory 
-target_include_directories(app PRIVATE src/inc src/inc/humidity-sensor src/inc/light-sensor src/inc/moisture-sensor)
+target_include_directories(app PRIVATE src/inc src/inc/humidity-sensor src/inc/light-sensor src/inc/moisture-sensor src/inc/temp-sensor)
 
 FILE(GLOB SRC_FILES
     "src/*.c"
@@ -26,6 +26,7 @@ FILE(GLOB SRC_FILES
     "src/inc/humidity-sensor/*.c"
     "src/inc/light-sensor/*.c"
     "src/inc/moisture-sensor/*.c"
+    "src/inc/temp-sensor/*.c"
 )
 
 target_sources(app PRIVATE ${SRC_FILES})
