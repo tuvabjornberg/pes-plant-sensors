@@ -108,12 +108,23 @@ static int sensor_node_channel_get(const struct device *dev,
                                    struct sensor_value *val) {
     struct sensor_node_data *data = dev->data;
 
-    if (chan != SENSOR_CHAN_AMBIENT_TEMP) {
+    switch (chan) {
+    case SENSOR_CHAN_AMBIENT_TEMP:
+        return sensor_value_from_milli(val, data->temp_milli_c);
+    case SENSOR_CHAN_HUMIDITY:
+        return sensor_value_from_float(val, data->humidity);
+
+    case PLANT_MONITOR_CHAN_SOIL_MOISTURE:
+        val->val1 = data->soil_moisture;
+        val->val2 = 0;
+        return 0;
+
+    case SENSOR_CHAN_LIGHT:
+        return sensor_value_from_float(val, data->lux);
+    default:
         return -ENOTSUP;
     }
 
-    val->val1 = data->temp_milli_c / 1000;
-    val->val2 = (data->temp_milli_c % 1000) * 1000;
     return 0;
 }
 
