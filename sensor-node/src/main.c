@@ -11,44 +11,31 @@
 static const struct device *bus = DEVICE_DT_GET(DT_NODELABEL(i2c1));
 static const struct device *sensor_i2c_bus = DEVICE_DT_GET(DT_NODELABEL(i2c0));
 
+static uint16_t temperature = 0;
+static float humidity = 0;
+static uint16_t soil_moisture = 10;
+static float lux = 30;
+
 int handle_read(uint8_t reg, uint8_t *to_send, size_t *bytes_to_send) {
-    printk("[read] From 0x%02x ", reg);
     switch (reg) {
     case SENSOR_TEMPRATURE: {
-        // TODO: read_temerature
-        printk("Temprature\n");
-        *(uint16_t *)to_send = 20;
+        memcpy(to_send, &temperature, sizeof(temperature));
         *bytes_to_send = sizeof(uint16_t);
         break;
     }
     case SENSOR_HUMIDITY: {
-        float result = 0;
-        read_humidity_sensor(&result);
-
-        memcpy(to_send, &result, sizeof(float));
-        *bytes_to_send = sizeof(float);
-
-        printk("Humidity %d.%02d\n", (int)result, (int)(result * 100));
+        memcpy(to_send, &humidity, sizeof(humidity));
+        *bytes_to_send = sizeof(humidity);
         break;
     }
     case SENSOR_SOIL: {
-        uint16_t result = 0;
-        read_moisture_sensor(&result);
-
-        memcpy(to_send, &result, sizeof(uint16_t));
-        *bytes_to_send = sizeof(uint16_t);
-
-        printk("Soil %d\n", result);
+        memcpy(to_send, &soil_moisture, sizeof(soil_moisture));
+        *bytes_to_send = sizeof(soil_moisture);
         break;
     }
     case SENSOR_LIGHT: {
-        float result = 0;
-        read_light_sensor(&result);
-
-        memcpy(to_send, &result, sizeof(float));
-        *bytes_to_send = sizeof(float);
-
-        printk("Light Total %d.%02d\n", (int)result, (int)(result * 100));
+        memcpy(to_send, &lux, sizeof(lux));
+        *bytes_to_send = sizeof(lux);
         break;
     }
 
@@ -100,5 +87,8 @@ int main(void) {
 
     while (1) {
         k_msleep(1000);
+        read_humidity_sensor(&humidity);
+        read_light_sensor(&lux);
+        read_moisture_sensor(&soil_moisture);
     }
 }
