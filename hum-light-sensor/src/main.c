@@ -2,18 +2,24 @@
 #include "inc/light-sensor/light-sensor.h"
 
 extern struct k_sem low_light_sem; 
-
 static const struct device *i2c_bus;
+static struct k_thread light_alert_thread_data;
 
 #define LIGHT_ALERT_STACK_SIZE 1024
+#define ALERT_PIN_NODE DT_ALIAS(alert_gpio)
 
 K_THREAD_STACK_DEFINE(light_alert_stack, LIGHT_ALERT_STACK_SIZE);
-static struct k_thread light_alert_thread_data;
+static const struct gpio_dt_spec alert_pin = GPIO_DT_SPEC_GET(ALERT_PIN_NODE, gpios);
 
 static void light_alert_thread(void *a, void *b, void *c) {
     while (1) {
         k_sem_take(&low_light_sem, K_FOREVER);
+
         printk("Alert: light level too low!\n");
+        
+        gpio_pin_set_dt(&alert_pin, 1);
+        k_msleep(100);
+        gpio_pin_set_dt(&alert_pin, 0);
     }
 }
 
