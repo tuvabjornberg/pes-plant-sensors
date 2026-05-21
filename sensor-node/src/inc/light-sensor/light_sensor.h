@@ -6,5 +6,5 @@
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/kernel.h>
 
-void init_light_sensor(const struct device *i2c_bus);
+int init_light_sensor(const struct device *i2c_bus);
 int read_light_sensor(float *lux);

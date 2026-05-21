@@ -21,10 +21,13 @@ static const struct device *i2c_bus_ref;
 static uint16_t ch0_data;
 static uint16_t ch1_data;
 
-void init_light_sensor(const struct device *i2c_bus) {
+int init_light_sensor(const struct device *i2c_bus) {
     i2c_bus_ref = i2c_bus;
-    i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_CONTR, ALS_CONTR_STANDBY);
-    i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_MEAS_RATE, ALS_MEAS_RATE_VAL);
+    int res = i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_CONTR, ALS_CONTR_STANDBY);
+    if (res < 0) {
+        return res;
+    }
+    return i2c_reg_write_byte(i2c_bus, LTR303_ADDR, ALS_MEAS_RATE, ALS_MEAS_RATE_VAL);
 }
 
 float calculate_lux() {

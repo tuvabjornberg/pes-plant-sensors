@@ -33,14 +33,15 @@ int init_moisture_sensor(const struct device *i2c_bus) {
 int read_moisture_sensor(uint16_t *moisture) {
     uint8_t cmd[2] = {0x0F, 0x10};
     uint8_t buf[2];
+    int res;
+    for (uint8_t retry = 0; retry < 5; retry++) {
+        res = i2c_write_read(i2c_bus_ref, ADA4026_ADDR, cmd, sizeof(cmd), buf, sizeof(buf));
+        if (res == 0) {
+            *moisture = (buf[0] << 8) | buf[1];
 
-    int data = i2c_write_read(i2c_bus_ref, ADA4026_ADDR, cmd, sizeof(cmd), buf, sizeof(buf));
-
-    if (data < 0) {
-        return data;
+            return 0;
+        }
     }
 
-    *moisture = (buf[0] << 8) | buf[1];
-
-    return 0;
+    return res;
 }
