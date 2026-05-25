@@ -26,13 +26,11 @@ static comm_state_machine_t comm = (comm_state_machine_t){
 static handler_config_t *registered_config = NULL;
 
 static int write_requested_cb(struct i2c_target_config *config) {
-    // printk("write requested\n");
     comm.state = COMM_WRITE_REQUESTED;
     return 0;
 }
 
 static int write_received_cb(struct i2c_target_config *config, uint8_t val) {
-    // printk("write received: 0x%02x\n", val);
 
     switch (comm.state) {
     case COMM_WRITE_REQUESTED:
@@ -52,12 +50,13 @@ static int write_received_cb(struct i2c_target_config *config, uint8_t val) {
 }
 
 static int read_requested_cb(struct i2c_target_config *config, uint8_t *out) {
-    // printk("read request: 0x%02x\n", *out);
 
     if (comm.state == COMM_ADDR_RECIVED) {
+        comm.msg_len = 0;
         registered_config->handle_read(comm.addr, comm.send_buf, &comm.msg_len);
         *out = comm.send_buf[0];
         comm.state = COMM_BUF_SEND;
+        printk("read request: %d  : %02x %02x %02x %02x\n", comm.msg_len, comm.send_buf[0], comm.send_buf[1], comm.send_buf[2], comm.send_buf[3]);
         comm.cursor = 1;
     } else {
         printk("Unexpected read: 0x%02x\n", *out);
@@ -68,18 +67,19 @@ static int read_requested_cb(struct i2c_target_config *config, uint8_t *out) {
 
 static int read_processed_cb(struct i2c_target_config *config, uint8_t *val) {
     // TOOO:figure out what all this means
-    // printk("read processed: 0x%02x\n", *val);
     if (comm.state == COMM_BUF_SEND && comm.cursor < comm.msg_len) {
         *val = comm.send_buf[comm.cursor];
         comm.cursor++;
     } else {
         *val = 0xff;
     }
+
+    printk("read processed: 0x%02x\n", *val);
     return 0;
 }
 
 static int stop_cb(struct i2c_target_config *config) {
-    // printk("sample target stop callback\n");
+    printk("sample target stop callback\n");
     comm.state = COMM_STOPPED;
     return 0;
 }

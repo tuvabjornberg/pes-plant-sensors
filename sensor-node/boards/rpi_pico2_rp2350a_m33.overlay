@@ -8,6 +8,17 @@
     zephyr,user {
 		io-channels = <&adc 0>;
 	};
+    
+    aliases {
+        alert-gpio = &alert_pin_node;
+    };
+
+    gpio_outputs {
+        compatible = "gpio-leds";       /* gives DTC the binding it needs */
+        alert_pin_node: alert_pin_node {
+            gpios = <&gpio0 15 0>;      /* 0 = GPIO_ACTIVE_HIGH */
+        };
+    };
 };
 
 &zephyr_udc0 {
@@ -47,6 +58,7 @@
         };
     };
 };
+
 
 &uart0 {
     status = "okay";
