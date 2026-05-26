@@ -56,7 +56,7 @@ static int read_requested_cb(struct i2c_target_config *config, uint8_t *out) {
         registered_config->handle_read(comm.addr, comm.send_buf, &comm.msg_len);
         *out = comm.send_buf[0];
         comm.state = COMM_BUF_SEND;
-        printk("read request: %d  : %02x %02x %02x %02x\n", comm.msg_len, comm.send_buf[0], comm.send_buf[1], comm.send_buf[2], comm.send_buf[3]);
+        // printk("read request: %d  : %02x %02x %02x %02x\n", comm.msg_len, comm.send_buf[0], comm.send_buf[1], comm.send_buf[2], comm.send_buf[3]);
         comm.cursor = 1;
     } else {
         printk("Unexpected read: 0x%02x\n", *out);
@@ -79,7 +79,7 @@ static int read_processed_cb(struct i2c_target_config *config, uint8_t *val) {
 }
 
 static int stop_cb(struct i2c_target_config *config) {
-    printk("sample target stop callback\n");
+    // printk("sample target stop callback\n");
     comm.state = COMM_STOPPED;
     return 0;
 }

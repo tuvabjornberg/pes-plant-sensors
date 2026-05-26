@@ -4,4 +4,7 @@ compatible: "pes,sensor-node"
 
 include: i2c-device.yaml
 
-properties: {}
+properties:
+  int_gpios:
+    type: phandle-array
+    required: false

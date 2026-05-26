@@ -27,6 +27,7 @@ static float lux = 42069;
 static volatile size_t low_light_timeout = 0;
 static volatile size_t sleept_cycles = 0;
 static volatile uint8_t light_level_threshold = 0;
+static volatile bool light_interupt_enabled = false;
 
 int handle_read(uint8_t reg, uint8_t *to_send, size_t *bytes_to_send) {
     switch (reg) {
@@ -72,7 +73,10 @@ int handle_write(uint8_t reg, uint8_t val) {
         sleept_cycles = 0;
         printk("Light Time Threshold\n");
         break;
-
+    case SENSOR_LIGHT_INTERUPT_ENABLE:
+        light_interupt_enabled = true;
+        printk("Light Interupt Enabled\n");
+        break;
     default:
         printk("unknown\n");
         break;
@@ -127,7 +131,7 @@ int main(void) {
             printk("ERR read_moisture_sensor: %d\n", r4);
         }
 
-        if (light_level_threshold != 0) {
+        if (light_interupt_enabled) {
             if (lux <= (float)light_level_threshold) {
                 if (sleept_cycles >= low_light_timeout) {
                     gpio_pin_set_dt(&alert_pin, 1);

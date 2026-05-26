@@ -1,6 +1,5 @@
 #define DT_DRV_COMPAT pes_sensor_node
-
-#define LOG_LEVEL CONFIG_SENSOR_LOG_LEVEL
+#define LOG_LEVEL     CONFIG_SENSOR_LOG_LEVEL
 #include <zephyr/logging/log.h>
 LOG_MODULE_REGISTER(sensor_node);
 #include "sensor_node.h"
@@ -80,7 +79,6 @@ static int fetch_single_channel(const struct device *dev,
         return -ENOTSUP;
     }
 
-    LOG_ERR("0x%x, size:%d", reg, reg_size);
     int ret = i2c_write_read_dt(&cfg->i2c, &reg, 1, buffer, reg_size);
     if (ret != 0) {
         LOG_ERR("i2c read failed: %d", ret);
@@ -88,9 +86,6 @@ static int fetch_single_channel(const struct device *dev,
     }
 
     memcpy(target, buffer, reg_size);
-    if (reg == 0x40) {
-        LOG_ERR("%d 0x%02x 0x%02x\n", data->soil_moisture, buffer[0], buffer[1]);
-    }
     return 0;
 }
 
@@ -149,7 +144,6 @@ static int sensor_node_trigger_set(const struct device *dev,
                                    sensor_trigger_handler_t handler) {
     struct sensor_node_data *data = dev->data;
     const struct sensor_node_config *config = dev->config;
-
     if (trig->type != SENSOR_TRIG_THRESHOLD) {
         return -ENOTSUP;
     }
@@ -242,7 +236,7 @@ static int sensor_node_init(const struct device *dev) {
 static struct sensor_node_data sensor_node_data_inst;
 static const struct sensor_node_config sensor_node_config_inst = {
     .i2c = I2C_DT_SPEC_INST_GET(0),
-    .int_gpio = GPIO_DT_SPEC_INST_GET_OR(0, irq_gpios, {0}),
+    .int_gpio = GPIO_DT_SPEC_INST_GET(0, int_gpios),
 };
 
 SENSOR_DEVICE_DT_INST_DEFINE(0,
