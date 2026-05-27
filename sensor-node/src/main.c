@@ -13,8 +13,8 @@
 static const struct gpio_dt_spec alert_pin = GPIO_DT_SPEC_GET(DT_ALIAS(alert_gpio), gpios);
 
 #define SLEEP_PERIOD_MS 1000
-// The the time in ms one unit in SENSOR_LIGHT_TIME_THRESHOLD is, e.g. 10 * min == 60000 ms
-#define TIMEOUT_UNIT_MS 60000
+// The the time in ms one unit in SENSOR_LIGHT_TIME_THRESHOLD is, e.g. 10 * min == 600000 ms
+#define TIMEOUT_UNIT_MS 600000
 static const struct device *bus = DEVICE_DT_GET(DT_NODELABEL(i2c1));
 static const struct device *sensor_i2c_bus = DEVICE_DT_GET(DT_NODELABEL(i2c0));
 static const struct adc_dt_spec adc_chan = ADC_DT_SPEC_GET(DT_PATH(zephyr_user));
@@ -24,8 +24,8 @@ static float humidity = 42069;
 static uint16_t soil_moisture = 42069;
 static float lux = 42069;
 
-static volatile size_t low_light_timeout = 0;
-static volatile size_t sleept_cycles = 0;
+static volatile uint8_t low_light_timeout = 0;
+static volatile int64_t deadline = 0;
 static volatile uint8_t light_level_threshold = 0;
 static volatile bool light_interupt_enabled = false;
 
@@ -68,13 +68,12 @@ int handle_write(uint8_t reg, uint8_t val) {
         break;
 
     case SENSOR_LIGHT_TIME_THRESHOLD:
-
-        low_light_timeout = ((size_t)val) * TIMEOUT_UNIT_MS / SLEEP_PERIOD_MS;
-        sleept_cycles = 0;
+        low_light_timeout = val;
         printk("Light Time Threshold\n");
         break;
     case SENSOR_LIGHT_INTERUPT_ENABLE:
         light_interupt_enabled = true;
+        deadline = k_uptime_get() + low_light_timeout * TIMEOUT_UNIT_MS;
         printk("Light Interupt Enabled\n");
         break;
     default:
@@ -132,17 +131,17 @@ int main(void) {
         }
 
         if (light_interupt_enabled) {
+            int64_t now = k_uptime_get();
+            printk("TIMER %lld\n", deadline - now);
             if (lux <= (float)light_level_threshold) {
-                if (sleept_cycles >= low_light_timeout) {
+                if (now >= deadline) {
                     gpio_pin_set_dt(&alert_pin, 1);
                     k_msleep(1);
                     gpio_pin_set_dt(&alert_pin, 0);
-                    sleept_cycles = 0;
-                } else {
-                    sleept_cycles++;
+                    deadline = now + low_light_timeout * TIMEOUT_UNIT_MS;
                 }
             } else {
-                sleept_cycles = 0;
+                deadline = now + low_light_timeout * TIMEOUT_UNIT_MS;
             }
         }
     }
