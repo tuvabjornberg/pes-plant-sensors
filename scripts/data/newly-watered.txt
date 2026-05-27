@@ -1,9 +1,3 @@
---- Periodic Sensor Read ---
-Temp: 20.400000
-Humidity: 32.835666
-Moisture: 928.000000
-Light: 109.951698
-
 20:47:01:988 -> --- Periodic Sensor Read ---
 20:47:01:988 -> Temp: 20.310000
 20:47:01:989 -> Humidity: 32.501205
