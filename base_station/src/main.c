@@ -116,9 +116,7 @@ static void cmd_enable(const struct shell *shell, size_t argc, char **argv) {
         .type = SENSOR_TRIG_THRESHOLD,
         .chan = SENSOR_CHAN_LIGHT, // Specific channel
     };
-    shell_print(shell, "adASDasdad");
     sensor_trigger_set(sensor, &trig, send_message);
-    shell_print(shell, "adASDasdad");
 }
 
 SHELL_CMD_REGISTER(read, NULL, "Usage: read temp, moisture, hum, light or all", cmd_read);
