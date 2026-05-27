@@ -14,6 +14,76 @@ static const struct device *const sensor = DEVICE_DT_GET(DT_NODELABEL(sensor_nod
 enum plant_monitor_channel {
     PLANT_MONITOR_CHAN_SOIL_MOISTURE = SENSOR_CHAN_PRIV_START,
 };
+static uint8_t current_period_min = 0;
+
+static void periodic_read_handler(struct k_work *work) {
+    struct sensor_value val;
+
+    printk("\n--- Periodic Sensor Read ---\n");
+
+    if (sensor_sample_fetch_chan(sensor, SENSOR_CHAN_AMBIENT_TEMP) == 0) {
+        sensor_channel_get(sensor, SENSOR_CHAN_AMBIENT_TEMP, &val);
+        printk("Temp: %d.%06d\n", val.val1, val.val2);
+    }
+
+    if (sensor_sample_fetch_chan(sensor, SENSOR_CHAN_HUMIDITY) == 0) {
+        sensor_channel_get(sensor, SENSOR_CHAN_HUMIDITY, &val);
+        printk("Humidity: %d.%06d\n", val.val1, val.val2);
+    }
+
+    if (sensor_sample_fetch_chan(sensor, PLANT_MONITOR_CHAN_SOIL_MOISTURE) == 0) {
+        sensor_channel_get(sensor, PLANT_MONITOR_CHAN_SOIL_MOISTURE, &val);
+        printk("Moisture: %d.%06d\n", val.val1, val.val2);
+    }
+
+    if (sensor_sample_fetch_chan(sensor, SENSOR_CHAN_LIGHT) == 0) {
+        sensor_channel_get(sensor, SENSOR_CHAN_LIGHT, &val);
+        printk("Light: %d.%06d\n", val.val1, val.val2);
+    }
+}
+
+K_WORK_DEFINE(periodic_read_work, periodic_read_handler);
+
+static void timer_handler(struct k_timer *dummy) {
+    k_work_submit(&periodic_read_work);
+}
+
+// Define the hardware-backed timer
+K_TIMER_DEFINE(periodic_timer, timer_handler, NULL);
+
+// 3. Command Handlers
+static int cmd_start(const struct shell *shell, size_t argc, char **argv) {
+    if (argc < 2) {
+        shell_print(shell, "Usage: start <period_min>");
+        return -EINVAL;
+    }
+
+    int period = atoi(argv[1]);
+    if (period <= 0 || period > 255) {
+        shell_print(shell, "Invalid period. Must be between 1 and 255.");
+        return -EINVAL;
+    }
+
+    current_period_min = (uint8_t)period;
+
+    // Start the timer: First tick happens K_NO_WAIT (immediately),
+    // and it auto-reloads exactly every K_MINUTES(current_period_min)
+    k_timer_start(&periodic_timer, K_NO_WAIT, K_MINUTES(current_period_min));
+
+    shell_print(shell, "Started reading every %d minute(s).", current_period_min);
+    return 0;
+}
+
+static int cmd_stop(const struct shell *shell, size_t argc, char **argv) {
+    // Stop the hardware timer
+    k_timer_stop(&periodic_timer);
+
+    // Cancel any work that the timer might have just submitted but hasn't run yet
+    k_work_cancel(&periodic_read_work);
+
+    shell_print(shell, "Stopped periodic reading.");
+    return 0;
+}
 
 static int cmd_read(const struct shell *shell, size_t argc, char **argv) {
 
@@ -120,8 +190,10 @@ static void cmd_enable(const struct shell *shell, size_t argc, char **argv) {
 }
 
 SHELL_CMD_REGISTER(read, NULL, "Usage: read temp, moisture, hum, light or all", cmd_read);
-SHELL_CMD_REGISTER(set, NULL, "Usage: set {threshold, or min} {0 <= n <256}", cmd_set);
+SHELL_CMD_REGISTER(set, NULL, "Usage: set <threshold, or min> <0 <= n <256>", cmd_set);
 SHELL_CMD_REGISTER(enable, NULL, "Usage: enable", cmd_enable);
+SHELL_CMD_REGISTER(start, NULL, "Usage: start <period_min>", cmd_start);
+SHELL_CMD_REGISTER(stop, NULL, "Usage: stop", cmd_stop);
 
 int main(void) {
     uint32_t dtr = 0;
