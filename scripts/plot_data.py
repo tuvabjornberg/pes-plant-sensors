@@ -49,12 +49,12 @@ colors = ["b", "g", "r", "purple"]
 for i, (ax, series, ylabel, color) in enumerate(zip(axs, seri, ylabel, colors)):
     ax.plot(series, "-o", color=color, label=ylabel)
     ax.set_ylabel(ylabel)
-    # ax.axvline(
-    #     dislodge_index - 0.5,
-    #     linestyle="--",
-    #     color="black",
-    #     label="Dislodged Sensor" if i == 3 else None,
-    # )
+    ax.axvline(
+        8 + 0.5,
+        linestyle="--",
+        color="blue",
+        label="Watered" if i == 3 else None,
+    )
 
 axs[0].set_ybound(17.5, 22.5)
 axs[3].set_xbound(-0.5, len(timestamps) - 0.5)
@@ -64,4 +64,4 @@ axs[3].set_xticklabels(timestamps, rotation=45)  # , ha="right")
 
 fig.legend(loc="upper center", ncol=5, bbox_to_anchor=(0.5, 1.02))
 plt.tight_layout()
-plt.savefig("newly_watered.png", bbox_inches="tight")
+plt.savefig("during_watering.png", bbox_inches="tight")
