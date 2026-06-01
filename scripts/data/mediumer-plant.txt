@@ -1,0 +1,46 @@
+read all
+Temp: 20.220000
+Humidity: 33.977371
+Moisture: 1014.000000
+Light: 266.194793
+uart:~$ read all
+Temp: 20.220000
+Humidity: 33.977371
+Moisture: 1013.000000
+Light: 261.916290
+uart:~$ read all
+Temp: 20.310000
+Humidity: 33.855049
+Moisture: 1013.000000
+Light: 261.916290
+uart:~$ read all
+Temp: 20.310000
+Humidity: 33.855049
+Moisture: 1014.000000
+Light: 257.637786
+uart:~$ read all
+Temp: 20.310000
+Humidity: 33.855049
+Moisture: 1014.000000
+Light: 257.637786
+uart:~$ read all
+Temp: 20.310000
+Humidity: 33.691951
+Moisture: 1014.000000
+Light: 257.637786
+uart:~$ read all
+Temp: 20.310000
+Humidity: 33.691951
+Moisture: 1014.000000
+Light: 257.637786
+uart:~$ read all
+Temp: 20.310000
+Humidity: 33.691951
+Moisture: 1013.000000
+Light: 261.916290
+uart:~$ read all
+Temp: 20.310000
+Humidity: 33.691951
+Moisture: 1013.000000
+Light: 261.916290
+uart:~$ 

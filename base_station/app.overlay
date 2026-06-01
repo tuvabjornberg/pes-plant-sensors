@@ -22,5 +22,6 @@
 		compatible = "pes,sensor-node";
 		reg = <0x60>;
 		status = "okay";
+		int_gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
 	};
 };

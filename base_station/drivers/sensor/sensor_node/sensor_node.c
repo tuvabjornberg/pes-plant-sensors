@@ -1,22 +1,34 @@
 #define DT_DRV_COMPAT pes_sensor_node
-
-#define LOG_LEVEL CONFIG_SENSOR_LOG_LEVEL
+#define LOG_LEVEL     CONFIG_SENSOR_LOG_LEVEL
 #include <zephyr/logging/log.h>
 LOG_MODULE_REGISTER(sensor_node);
+#include "sensor_node.h"
 #include <errno.h>
+#include <inttypes.h>
 #include <string.h>
 #include <zephyr/device.h>
+#include <zephyr/drivers/gpio.h>
 #include <zephyr/drivers/i2c.h>
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/kernel.h>
 
 #define PLANT_MONITOR_CHAN_SOIL_MOISTURE SENSOR_CHAN_PRIV_START
 
+#define LIGHT_LEVEL_THESHOLD_REG     0x51
+#define LIGHT_LEVEL_THESHOLD_DUR_REG 0x52
+#define LIGHT_INTERUPT_ENABLE_REG    0x53
+
 struct sensor_node_config {
     struct i2c_dt_spec i2c;
+    struct gpio_dt_spec int_gpio;
 };
 
 struct sensor_node_data {
+    sensor_trigger_handler_t handler;
+    const struct sensor_trigger *trigger;
+    const struct device *dev;
+    struct gpio_callback gpio_cb;
+    struct k_work work;
     int32_t temp_milli_c;
     uint16_t soil_moisture;
     float humidity;
@@ -68,7 +80,6 @@ static int fetch_single_channel(const struct device *dev,
     }
 
     int ret = i2c_write_read_dt(&cfg->i2c, &reg, 1, buffer, reg_size);
-
     if (ret != 0) {
         LOG_ERR("i2c read failed: %d", ret);
         return ret;
@@ -128,25 +139,104 @@ static int sensor_node_channel_get(const struct device *dev,
     return 0;
 }
 
+static int sensor_node_trigger_set(const struct device *dev,
+                                   const struct sensor_trigger *trig,
+                                   sensor_trigger_handler_t handler) {
+    struct sensor_node_data *data = dev->data;
+    const struct sensor_node_config *config = dev->config;
+    if (trig->type != SENSOR_TRIG_THRESHOLD) {
+        return -ENOTSUP;
+    }
+
+    gpio_pin_interrupt_configure_dt(&config->int_gpio, GPIO_INT_DISABLE);
+    data->trigger = trig;
+    data->handler = handler;
+
+    i2c_reg_write_byte_dt(&config->i2c, LIGHT_INTERUPT_ENABLE_REG, 1);
+
+    /* Re-enable the GPIO interrupt if a handler was provided */
+    if (handler != NULL) {
+        gpio_pin_interrupt_configure_dt(&config->int_gpio, GPIO_INT_EDGE_TO_ACTIVE);
+    }
+
+    return 0;
+}
+static int sensor_node_attr_set(const struct device *dev,
+                                enum sensor_channel chan,
+                                enum sensor_attribute attr,
+                                const struct sensor_value *val) {
+    const struct sensor_node_config *config = dev->config;
+    if (val->val1 < 0 || val->val1 >= 256 || val->val2 != 0) {
+        return -EINVAL;
+    }
+
+    switch (chan) {
+    case SENSOR_CHAN_LIGHT:
+        switch (attr) {
+        case SENSOR_ATTR_UPPER_THRESH:
+            return i2c_reg_write_byte_dt(&config->i2c, LIGHT_LEVEL_THESHOLD_REG, (uint8_t)val->val1);
+        case SENSOR_ATTR_THRESHOLD_DUR:
+            return i2c_reg_write_byte_dt(&config->i2c, LIGHT_LEVEL_THESHOLD_DUR_REG, (uint8_t)val->val1);
+        default:
+            return -ENOTSUP;
+        }
+
+    default:
+        return -ENOTSUP;
+    }
+}
+static void sensor_node_work_cb(struct k_work *work) {
+    struct sensor_node_data *data = CONTAINER_OF(work, struct sensor_node_data, work);
+
+    if (data->handler != NULL) {
+        data->handler(data->dev, data->trigger);
+    }
+}
+
+static void sensor_node_gpio_cb(const struct device *port,
+                                struct gpio_callback *cb,
+                                uint32_t pins) {
+    struct sensor_node_data *data = CONTAINER_OF(cb, struct sensor_node_data, gpio_cb);
+
+    k_work_submit(&data->work);
+}
+
 static const struct sensor_driver_api sensor_node_api = {
     .sample_fetch = sensor_node_sample_fetch,
     .channel_get = sensor_node_channel_get,
+    .trigger_set = sensor_node_trigger_set,
+    .attr_set = sensor_node_attr_set,
 };
 
 static int sensor_node_init(const struct device *dev) {
     const struct sensor_node_config *cfg = dev->config;
+    struct sensor_node_data *data = dev->data;
+    data->dev = dev;
 
     if (!i2c_is_ready_dt(&cfg->i2c)) {
         LOG_ERR("I2C not ready");
         return -ENODEV;
     }
 
+    k_work_init(&data->work, sensor_node_work_cb);
+
+    /* Check if the GPIO is ready and configure it as an input */
+    if (!gpio_is_ready_dt(&cfg->int_gpio)) {
+        return -ENODEV;
+    }
+
+    gpio_pin_configure_dt(&cfg->int_gpio, GPIO_INPUT);
+
+    /* Set up the GPIO callback */
+    gpio_init_callback(&data->gpio_cb, sensor_node_gpio_cb, BIT(cfg->int_gpio.pin));
+    gpio_add_callback(cfg->int_gpio.port, &data->gpio_cb);
     return 0;
 }
 
 static struct sensor_node_data sensor_node_data_inst;
 static const struct sensor_node_config sensor_node_config_inst = {
     .i2c = I2C_DT_SPEC_INST_GET(0),
+    .int_gpio = GPIO_DT_SPEC_INST_GET(0, int_gpios),
 };
 
 SENSOR_DEVICE_DT_INST_DEFINE(0,
